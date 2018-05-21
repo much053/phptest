@@ -1,0 +1,32 @@
+{
+  "name": "uniondrug/http",
+  "description": "Uniondrug Http Component for uniondrug/framework",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "Http",
+    "PSR"
+  ],
+  "authors": [
+    {
+      "name": "janhuang",
+      "email": "bboyjanhuang@gmail.com"
+    },
+    {
+      "name": "Uniondrug Dev Team",
+      "email": "dev@uniondrug.cn"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "psr/http-message": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Uniondrug\\Http\\": "src"
+    }
+  }
+}

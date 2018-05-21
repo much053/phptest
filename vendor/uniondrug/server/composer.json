@@ -1,0 +1,27 @@
+{
+  "name": "uniondrug/server",
+  "description": "Uniondrug Server Component for uniondrug/framework",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Uniondrug Dev Team",
+      "email": "dev@uniondrug.cn"
+    }
+  ],
+  "require": {
+    "uniondrug/framework": "^2.0",
+    "uniondrug/swoole": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Uniondrug\\Server\\": "src/"
+    },
+    "files": [
+      "helpers.php"
+    ]
+  },
+  "bin": [
+    "server"
+  ]
+}

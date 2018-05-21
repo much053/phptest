@@ -1,0 +1,24 @@
+{
+  "name": "uniondrug/console",
+  "description": "Uniondrug Console Component for uniondrug/framework",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Uniondrug Dev Team",
+      "email": "dev@uniondrug.cn"
+    }
+  ],
+  "require": {
+    "uniondrug/framework": "^2.0",
+    "symfony/console": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Uniondrug\\Console\\": "src/"
+    }
+  },
+  "bin": [
+    "console"
+  ]
+}
