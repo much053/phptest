@@ -33,7 +33,7 @@ class UserService extends Service
         ]);
 
         if ($member->hasError()){
-            throw new Error($member->getErrno(), $member->getError());
+            throw new Error($member->getErrno(), "账号或密码错误");
         }
 
         $worker = $this->serviceSdk->merchant->login([
@@ -41,7 +41,7 @@ class UserService extends Service
         ]);
 
         if ($worker->hasError()){
-            throw new Error($worker->getErrno(), $worker->getError());
+            throw new Error($worker->getErrno(), "账号不存在");
         }
 
         return $worker->getData();
