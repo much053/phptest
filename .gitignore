@@ -1,0 +1,15 @@
+/node_modules
+!.gitkeep
+/.idea
+/vendor
+/log/*.log
+/tmp/cache/volt/*.volt.php
+/tmp/pids/*
+!/tmp/pids/.gitkeep
+/tmp/sockets/*
+!/tmp/sockets/.gitkeep
+/composer.lock
+tmp/*
+/nbproject/private/
+/public/.htaccess
+/log/
