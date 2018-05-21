@@ -9,7 +9,7 @@
 return [
     'default'    => [
         'debug'               => true, // 调试开关
-        'appName'             => env('APP_NAME', 'module.customer.service'), // 应用名称
+        'appName'             => env('APP_NAME', 'module.agent'), // 应用名称
         'appVersion'          => '1.0.0',
         'useAnnotationRouter' => true, // 是否启用注解路由
         'providers'           => [
