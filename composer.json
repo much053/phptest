@@ -1,0 +1,39 @@
+{
+  "name": "uniondrug/sketch",
+  "description": "Uniondrug Service Application Template",
+  "keywords": ["phalcon", "framework", "php"],
+  "license": "proprietary",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Uniondrug R&D Team",
+      "email": "dev@uniondrug.cn"
+    }
+  ],
+  "require": {
+    "uniondrug/console": "^2.2",
+    "uniondrug/crontab": "^2.1",
+    "uniondrug/framework": "^2.0",
+    "uniondrug/http-client": "^2.0",
+    "uniondrug/middleware": "^2.0",
+    "uniondrug/register": "^2.0",
+    "uniondrug/server": "^2.6",
+    "uniondrug/service": "^2.0",
+    "uniondrug/service-sdk": "^1.0",
+    "uniondrug/structs": "^2.0",
+    "uniondrug/trace": "^2.0",
+    "uniondrug/validation": "^2.0",
+    "uniondrug/token-auth-middleware": "^1.0",
+    "uniondrug/redis": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "bin-dir": ""
+  }
+}

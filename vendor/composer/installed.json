@@ -1,0 +1,1360 @@
+[
+    {
+        "name": "guzzlehttp/promises",
+        "version": "v1.3.1",
+        "version_normalized": "1.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/promises.git",
+            "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/guzzle/promises/a59da6cf61d80060647ff4d3eb2c03a2bc694646.zip",
+            "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0"
+        },
+        "time": "2016-12-20T10:07:11+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Promise\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle promises library",
+        "keywords": [
+            "promise"
+        ]
+    },
+    {
+        "name": "psr/http-message",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-message.git",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/php-fig/http-message/f6561bf28d520154e4b0ec72be95418abe6d9363.zip",
+            "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-08-06T14:39:51+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Message\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP messages",
+        "homepage": "https://github.com/php-fig/http-message",
+        "keywords": [
+            "http",
+            "http-message",
+            "psr",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "guzzlehttp/psr7",
+        "version": "1.4.2",
+        "version_normalized": "1.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/psr7.git",
+            "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/guzzle/psr7/f5b8a8512e2b58b0071a7280e39f14f72e05d87c.zip",
+            "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "psr/http-message": "~1.0"
+        },
+        "provide": {
+            "psr/http-message-implementation": "1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2017-03-20T17:10:46+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Psr7\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            },
+            {
+                "name": "Tobias Schultze",
+                "homepage": "https://github.com/Tobion"
+            }
+        ],
+        "description": "PSR-7 message implementation that also provides common utility methods",
+        "keywords": [
+            "http",
+            "message",
+            "request",
+            "response",
+            "stream",
+            "uri",
+            "url"
+        ]
+    },
+    {
+        "name": "guzzlehttp/guzzle",
+        "version": "6.3.3",
+        "version_normalized": "6.3.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/guzzle/guzzle/407b0cb880ace85c9b63c5f9551db498cb2d50ba.zip",
+            "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/promises": "^1.0",
+            "guzzlehttp/psr7": "^1.4",
+            "php": ">=5.5"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+            "psr/log": "^1.0"
+        },
+        "suggest": {
+            "psr/log": "Required for using the Log middleware"
+        },
+        "time": "2018-04-22T15:46:56+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "6.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/functions_include.php"
+            ],
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "symfony/dotenv",
+        "version": "v4.0.9",
+        "version_normalized": "4.0.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/dotenv.git",
+            "reference": "afb6923923e22874dac20bd042167ccb8df1d158"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/dotenv/afb6923923e22874dac20bd042167ccb8df1d158.zip",
+            "reference": "afb6923923e22874dac20bd042167ccb8df1d158",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3"
+        },
+        "require-dev": {
+            "symfony/process": "~3.4|~4.0"
+        },
+        "time": "2018-01-03T17:15:19+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Dotenv\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Registers environment variables from a .env file",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "dotenv",
+            "env",
+            "environment"
+        ]
+    },
+    {
+        "name": "uniondrug/register",
+        "version": "2.2.1",
+        "version_normalized": "2.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/register.git",
+            "reference": "87a4375b9147c36db3ab1422f6ca29fec01eb06a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/register/87a4375b9147c36db3ab1422f6ca29fec01eb06a.zip",
+            "reference": "87a4375b9147c36db3ab1422f6ca29fec01eb06a",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0"
+        },
+        "time": "2018-05-02T11:37:02+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Register\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Register Client Component for uniondrug/framework",
+        "keywords": [
+            "phalcon",
+            "register"
+        ]
+    },
+    {
+        "name": "uniondrug/http",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/http.git",
+            "reference": "d650af25bd4587499befa76081a8fe8275431320"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/http/d650af25bd4587499befa76081a8fe8275431320.zip",
+            "reference": "d650af25bd4587499befa76081a8fe8275431320",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6",
+            "psr/http-message": "~1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.0"
+        },
+        "time": "2018-04-03T11:11:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Http\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "janhuang",
+                "email": "bboyjanhuang@gmail.com"
+            },
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Http Component for uniondrug/framework",
+        "keywords": [
+            "http",
+            "psr"
+        ]
+    },
+    {
+        "name": "psr/log",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/php-fig/log/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d.zip",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2016-10-10T12:19:37+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Log\\": "Psr/Log/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "symfony/debug",
+        "version": "v4.0.9",
+        "version_normalized": "4.0.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/debug.git",
+            "reference": "e1d57cdb357e5b10f5fdacbb0b86689c0a435e6e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/debug/e1d57cdb357e5b10f5fdacbb0b86689c0a435e6e.zip",
+            "reference": "e1d57cdb357e5b10f5fdacbb0b86689c0a435e6e",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3",
+            "psr/log": "~1.0"
+        },
+        "conflict": {
+            "symfony/http-kernel": "<3.4"
+        },
+        "require-dev": {
+            "symfony/http-kernel": "~3.4|~4.0"
+        },
+        "time": "2018-04-30T16:59:37+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Debug\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Debug Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/polyfill-mbstring",
+        "version": "v1.8.0",
+        "version_normalized": "1.8.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-mbstring.git",
+            "reference": "3296adf6a6454a050679cde90f95350ad604b171"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/polyfill-mbstring/3296adf6a6454a050679cde90f95350ad604b171.zip",
+            "reference": "3296adf6a6454a050679cde90f95350ad604b171",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-mbstring": "For best performance"
+        },
+        "time": "2018-04-26T10:06:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Mbstring\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for the Mbstring extension",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "mbstring",
+            "polyfill",
+            "portable",
+            "shim"
+        ]
+    },
+    {
+        "name": "symfony/console",
+        "version": "v3.4.9",
+        "version_normalized": "3.4.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/console.git",
+            "reference": "5b1fdfa8eb93464bcc36c34da39cedffef822cdf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/console/5b1fdfa8eb93464bcc36c34da39cedffef822cdf.zip",
+            "reference": "5b1fdfa8eb93464bcc36c34da39cedffef822cdf",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.5.9|>=7.0.8",
+            "symfony/debug": "~2.8|~3.0|~4.0",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "conflict": {
+            "symfony/dependency-injection": "<3.4",
+            "symfony/process": "<3.3"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~3.3|~4.0",
+            "symfony/dependency-injection": "~3.4|~4.0",
+            "symfony/event-dispatcher": "~2.8|~3.0|~4.0",
+            "symfony/lock": "~3.4|~4.0",
+            "symfony/process": "~3.3|~4.0"
+        },
+        "suggest": {
+            "psr/log-implementation": "For using the console logger",
+            "symfony/event-dispatcher": "",
+            "symfony/lock": "",
+            "symfony/process": ""
+        },
+        "time": "2018-04-30T01:22:56+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Console\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Console Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "uniondrug/swoole",
+        "version": "2.0.4",
+        "version_normalized": "2.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/swoole.git",
+            "reference": "b7aa441fc9bb6a94ed84964a180ba8e9ed1abf6b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/swoole/b7aa441fc9bb6a94ed84964a180ba8e9ed1abf6b.zip",
+            "reference": "b7aa441fc9bb6a94ed84964a180ba8e9ed1abf6b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6",
+            "symfony/console": "^3.0",
+            "uniondrug/http": "^2.0",
+            "uniondrug/packet": "^2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.0"
+        },
+        "time": "2018-04-26T03:57:09+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Swoole\\": "src"
+            },
+            "files": [
+                "helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "janhuang",
+                "email": "bboyjanhuang@gmail.com"
+            },
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Swoole Component for uniondrug/framework"
+    },
+    {
+        "name": "uniondrug/validation",
+        "version": "2.5.1",
+        "version_normalized": "2.5.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/validation.git",
+            "reference": "7b0726768ba081ffb0ff85a4347c5804e85196b6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/validation/7b0726768ba081ffb0ff85a4347c5804e85196b6.zip",
+            "reference": "7b0726768ba081ffb0ff85a4347c5804e85196b6",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0"
+        },
+        "time": "2018-04-03T11:09:30+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Validation\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Validation Component for uniondrug/framework",
+        "keywords": [
+            "phalcon",
+            "validator"
+        ]
+    },
+    {
+        "name": "uniondrug/service",
+        "version": "2.7.4",
+        "version_normalized": "2.7.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/service.git",
+            "reference": "0a37972fffb8d3f86cf26aa15443cf0209f63828"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/service/0a37972fffb8d3f86cf26aa15443cf0209f63828.zip",
+            "reference": "0a37972fffb8d3f86cf26aa15443cf0209f63828",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0",
+            "uniondrug/structs": "^2.0"
+        },
+        "time": "2018-05-02T08:23:20+00:00",
+        "type": "project",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Service\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Micro Service Component for uniondrug/framework",
+        "keywords": [
+            "phalcon"
+        ]
+    },
+    {
+        "name": "uniondrug/trace",
+        "version": "2.2.5",
+        "version_normalized": "2.2.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/trace.git",
+            "reference": "05786f0f2897496e2ff038653b9a81ae7a73089e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/trace/05786f0f2897496e2ff038653b9a81ae7a73089e.zip",
+            "reference": "05786f0f2897496e2ff038653b9a81ae7a73089e",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0"
+        },
+        "time": "2018-04-29T14:48:45+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Trace\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Trace Client Component for uniondrug/framework",
+        "keywords": [
+            "phalcon",
+            "trace"
+        ]
+    },
+    {
+        "name": "dragonmantank/cron-expression",
+        "version": "v2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dragonmantank/cron-expression.git",
+            "reference": "3f00985deec8df53d4cc1e5c33619bda1ee309a5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/dragonmantank/cron-expression/3f00985deec8df53d4cc1e5c33619bda1ee309a5.zip",
+            "reference": "3f00985deec8df53d4cc1e5c33619bda1ee309a5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~6.4"
+        },
+        "time": "2018-04-06T15:51:55+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cron\\": "src/Cron/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            },
+            {
+                "name": "Chris Tankersley",
+                "email": "chris@ctankersley.com",
+                "homepage": "https://github.com/dragonmantank"
+            }
+        ],
+        "description": "CRON for PHP: Calculate the next or previous run date and determine if a CRON expression is due",
+        "keywords": [
+            "cron",
+            "schedule"
+        ]
+    },
+    {
+        "name": "uniondrug/framework",
+        "version": "2.8.5",
+        "version_normalized": "2.8.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/framework.git",
+            "reference": "38a80b16814160e8c31517a30a97b161ea86b9f6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/framework/38a80b16814160e8c31517a30a97b161ea86b9f6.zip",
+            "reference": "38a80b16814160e8c31517a30a97b161ea86b9f6",
+            "shasum": ""
+        },
+        "require": {
+            "ext-phalcon": "^3.2.0",
+            "php": ">=7.0",
+            "symfony/dotenv": "^4.0"
+        },
+        "time": "2018-05-16T07:48:02+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Framework\\": "src/"
+            },
+            "files": [
+                "helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug framework. A mini framework based on Phalcon"
+    },
+    {
+        "name": "uniondrug/console",
+        "version": "2.2.4",
+        "version_normalized": "2.2.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/console.git",
+            "reference": "43a6978a849341c79e633d0d358ef56b2dd7b97b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/console/43a6978a849341c79e633d0d358ef56b2dd7b97b.zip",
+            "reference": "43a6978a849341c79e633d0d358ef56b2dd7b97b",
+            "shasum": ""
+        },
+        "require": {
+            "symfony/console": "^3.0",
+            "uniondrug/framework": "^2.0"
+        },
+        "time": "2018-05-09T20:02:47+00:00",
+        "bin": [
+            "console"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Console\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Console Component for uniondrug/framework"
+    },
+    {
+        "name": "uniondrug/packet",
+        "version": "2.0.3",
+        "version_normalized": "2.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/packet.git",
+            "reference": "34caeba3a261fd17bf2f26245a7c5502a0236788"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/packet/34caeba3a261fd17bf2f26245a7c5502a0236788.zip",
+            "reference": "34caeba3a261fd17bf2f26245a7c5502a0236788",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.0"
+        },
+        "time": "2018-05-08T10:32:43+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Packet\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "janhuang",
+                "email": "bboyjanhuang@gmail.com"
+            }
+        ],
+        "description": "Uniondrug Packet Component for uniondrug/framework"
+    },
+    {
+        "name": "uniondrug/server",
+        "version": "2.8.9",
+        "version_normalized": "2.8.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/server.git",
+            "reference": "efbcb9a6800dcf11f4f42e2d2bed23bc029647eb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/server/efbcb9a6800dcf11f4f42e2d2bed23bc029647eb.zip",
+            "reference": "efbcb9a6800dcf11f4f42e2d2bed23bc029647eb",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0",
+            "uniondrug/swoole": "^2.0"
+        },
+        "time": "2018-05-10T06:51:59+00:00",
+        "bin": [
+            "server"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Server\\": "src/"
+            },
+            "files": [
+                "helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Server Component for uniondrug/framework"
+    },
+    {
+        "name": "uniondrug/crontab",
+        "version": "2.1.9",
+        "version_normalized": "2.1.9.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/crontab.git",
+            "reference": "3e8f205b3140f0895b79e60c1851ec59040cf306"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/crontab/3e8f205b3140f0895b79e60c1851ec59040cf306.zip",
+            "reference": "3e8f205b3140f0895b79e60c1851ec59040cf306",
+            "shasum": ""
+        },
+        "require": {
+            "dragonmantank/cron-expression": "^2.0",
+            "uniondrug/framework": "^2.0",
+            "uniondrug/server": "^2.0"
+        },
+        "time": "2018-05-09T20:01:30+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Crontab\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Crontab Component for uniondrug/framework",
+        "keywords": [
+            "crontab",
+            "phalcon"
+        ]
+    },
+    {
+        "name": "uniondrug/http-client",
+        "version": "2.1.10",
+        "version_normalized": "2.1.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/http-client.git",
+            "reference": "3456288f07055b195620232a23e7889ed3e815a4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/http-client/3456288f07055b195620232a23e7889ed3e815a4.zip",
+            "reference": "3456288f07055b195620232a23e7889ed3e815a4",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "^6.3",
+            "uniondrug/framework": "^2.0"
+        },
+        "time": "2018-05-09T19:58:14+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\HttpClient\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Http Client Component for uniondrug/framework",
+        "keywords": [
+            "cache",
+            "phalcon"
+        ]
+    },
+    {
+        "name": "uniondrug/middleware",
+        "version": "2.4.7",
+        "version_normalized": "2.4.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/middleware.git",
+            "reference": "367242997628046775dbc8f6a93717861d15a885"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/middleware/367242997628046775dbc8f6a93717861d15a885.zip",
+            "reference": "367242997628046775dbc8f6a93717861d15a885",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0"
+        },
+        "time": "2018-05-09T20:00:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Middleware\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug R&D Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Middleware Component for uniondrug/framework"
+    },
+    {
+        "name": "uniondrug/service-sdk",
+        "version": "1.0.25",
+        "version_normalized": "1.0.25.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/service-sdk.git",
+            "reference": "87b37fad61ede1a515b2defb871bbb1f703bb2d4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/service-sdk/87b37fad61ede1a515b2defb871bbb1f703bb2d4.zip",
+            "reference": "87b37fad61ede1a515b2defb871bbb1f703bb2d4",
+            "shasum": ""
+        },
+        "time": "2018-05-18T04:08:34+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\ServiceSdk\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "wsfuyibing",
+                "email": "websearch@163.com"
+            }
+        ],
+        "description": "ServiceSDK"
+    },
+    {
+        "name": "uniondrug/structs",
+        "version": "2.14.2",
+        "version_normalized": "2.14.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/structs.git",
+            "reference": "4d599781c5cd2a34af528c8f8a7e81c12f648cfe"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/structs/4d599781c5cd2a34af528c8f8a7e81c12f648cfe.zip",
+            "reference": "4d599781c5cd2a34af528c8f8a7e81c12f648cfe",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0",
+            "uniondrug/validation": "^2.0"
+        },
+        "time": "2018-05-18T03:24:57+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Structs\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Struct Component for uniondrug/framework",
+        "keywords": [
+            "cache",
+            "phalcon"
+        ]
+    },
+    {
+        "name": "uniondrug/cache",
+        "version": "2.1.1",
+        "version_normalized": "2.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/cache.git",
+            "reference": "e5b79b61bd4e7ee2b4b30224308cf5d546f87af4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/cache/e5b79b61bd4e7ee2b4b30224308cf5d546f87af4.zip",
+            "reference": "e5b79b61bd4e7ee2b4b30224308cf5d546f87af4",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0"
+        },
+        "time": "2018-03-06T12:08:19+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Cache\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "cache component for uniondrug/framework",
+        "keywords": [
+            "cache",
+            "phalcon"
+        ]
+    },
+    {
+        "name": "uniondrug/token-auth-middleware",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/token-auth-middleware.git",
+            "reference": "63808b2eb603312b85efbc3579e66d36b9e898ee"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/token-auth-middleware/63808b2eb603312b85efbc3579e66d36b9e898ee.zip",
+            "reference": "63808b2eb603312b85efbc3579e66d36b9e898ee",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/cache": "^2.0",
+            "uniondrug/framework": "^2.0",
+            "uniondrug/middleware": "^2.0"
+        },
+        "time": "2018-04-24T08:12:19+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\TokenAuthMiddleware\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Token Auth Middleware Component for uniondrug/framework",
+        "keywords": [
+            "auth",
+            "middleware",
+            "phalcon",
+            "token"
+        ]
+    },
+    {
+        "name": "uniondrug/redis",
+        "version": "2.0.2",
+        "version_normalized": "2.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/redis.git",
+            "reference": "6937a8ee5d7e415f6ecf07482762ca665b20e856"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/redis/6937a8ee5d7e415f6ecf07482762ca665b20e856.zip",
+            "reference": "6937a8ee5d7e415f6ecf07482762ca665b20e856",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0"
+        },
+        "time": "2018-05-16T07:47:15+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Redis\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Redis Component for uniondrug/framework",
+        "keywords": [
+            "phalcon",
+            "redis"
+        ]
+    }
+]
