@@ -10,6 +10,8 @@ namespace App\Controllers;
 
 use App\Controllers\Abstracts\Base;
 use App\Logics\Communicate\AddLogic;
+use App\Logics\Communicate\DetailLogic;
+use App\Logics\Communicate\ListLogic;
 
 /**
  * Class CommunicateController
@@ -23,7 +25,11 @@ class CommunicateController extends Base
      */
     public function indexAction()
     {
+        $input = $this->request->getQuery();
 
+        $logic = ListLogic::factory($input);
+
+        return $this->serviceServer->withStruct($logic);
     }
 
     /**
@@ -41,9 +47,11 @@ class CommunicateController extends Base
     /**
      * @Get('/{id}')
      */
-    public function detailAction()
+    public function detailAction($id)
     {
+        $logic = DetailLogic::factory($id);
 
+        return $this->serviceServer->withData($logic);
     }
 
     /**

@@ -8,9 +8,10 @@
 
 namespace App\Services;
 
-use App\Models\UgOrderItems;
 use App\Models\UgOrderRecords;
 use App\Services\Abstracts\Service;
+use App\Structs\Requests\Order\ListStruct;
+use Phalcon\Mvc\Model\Query\Builder;
 
 /**
  * 订单服务类
@@ -19,6 +20,22 @@ use App\Services\Abstracts\Service;
  */
 class OrderService extends Service
 {
+    public function getList(ListStruct $struct)
+    {
+        $builder = new Builder();
+        $builder->columns('a.id as orderId,a.order_no as orderNo,show_amount as totalAmount,created_at as createdAt,partner_name as partnerName,shop_id as isOnline,service_name as serviceName');
+        $builder->from(["a" => "App\\Models\\UgOrderRecords"]);
+        $builder->orderBy('id desc');
+
+        $orders = $this->withQueryPaging($builder, $struct->page, $struct->limit);
+        return $orders;
+    }
+
+    /**
+     * 获取订单详情
+     * @param $orderId
+     * @return array
+     */
     public function detail($orderId)
     {
         $order = UgOrderRecords::findFirst($orderId);

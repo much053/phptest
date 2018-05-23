@@ -9,16 +9,17 @@
 namespace App\Controllers;
 
 use App\Controllers\Abstracts\Base;
+use App\Logics\Equity\RecordLogic;
 use App\Logics\Order\DetailLogic;
 use App\Logics\Order\ListLogic;
 
 /**
- * 用户类
- * Class UserController
+ * 权益类
+ * Class EquityController
  * @package App\Controllers
- * @RoutePrefix('/orders')
+ * @RoutePrefix('/equity')
  */
-class OrderController extends Base
+class EquityController extends Base
 {
     /**
      * @Get('')
@@ -33,12 +34,15 @@ class OrderController extends Base
     }
 
     /**
-     * @Get('/{id:([0-9]+)}')
+     * @Get('/{id:([0-9]+)}/records')
      */
-    public function detailAction($id)
+    public function recordAction($id)
     {
-        $logic = DetailLogic::factory($id);
+        $input = $this->request->getQuery();
+        $input['equityId'] = $id;
 
-        return $this->serviceServer->withData($logic);
+        $logic = RecordLogic::factory($input);
+
+        return $this->serviceServer->withStruct($logic);
     }
 }

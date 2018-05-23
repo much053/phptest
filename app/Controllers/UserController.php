@@ -9,6 +9,7 @@
 namespace App\Controllers;
 
 use App\Controllers\Abstracts\Base;
+use App\Logics\User\DetailLogic;
 use App\Logics\User\LoginLogic;
 use App\Logics\User\LogoutLogic;
 use App\Logics\User\MenuLogic;
@@ -55,5 +56,15 @@ class UserController extends Base
         $logic = MenuLogic::factory();
 
         return $this->serviceServer->withSuccess($logic);
+    }
+
+    /**
+     * @Get('')
+     */
+    public function showAction()
+    {
+        $user = DetailLogic::factory();
+
+        return $this->serviceServer->withStruct($user);
     }
 }

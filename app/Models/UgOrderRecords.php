@@ -11,7 +11,7 @@ namespace App\Models;
 
 use App\Models\Abstracts\Model;
 
-class UgOrderRecords extends Model
+class UgOrderRecords extends BaseModel
 {
     CONST ORDER_ACTIVATE = 1;  //待激活,用户资料不全
     CONST ORDER_ADDING = 0; //是未支付状态

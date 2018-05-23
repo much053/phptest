@@ -22,7 +22,7 @@ return [
             'port'     => '3712',
             'username' => 'develop',
             'password' => 'develop123',
-            'dbname'   => 'uniondrug_member_rc',
+            'dbname'   => 'cn_devocet_module_agent',
             'charset'  => 'utf8',
         ]
     ],
@@ -42,7 +42,7 @@ return [
             'port'     => '3712',
             'username' => 'develop',
             'password' => 'develop123',
-            'dbname'   => 'uniondrug_member_rc',
+            'dbname'   => 'cn_devocet_module_agent',
             'charset'  => 'utf8',
         ]
     ],

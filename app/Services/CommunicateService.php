@@ -8,7 +8,11 @@
 
 namespace App\Services;
 
+use App\Errors\Code;
+use App\Errors\Error;
+use App\Models\Communicates;
 use App\Services\Abstracts\Service;
+use Phalcon\Mvc\Model\Query\Builder;
 
 /**
  * 沟通记录Service
@@ -18,6 +22,20 @@ use App\Services\Abstracts\Service;
 class CommunicateService extends Service
 {
     /**
+     * 获取沟通记录列表
+     * @param $struct
+     * @return \stdClass
+     */
+    public function getList($struct)
+    {
+        $builder = new Builder();
+        $builder->from(["a" => "App\\Models\\Communicates"]);
+        $builder->orderBy('communicateId desc');
+
+        return $this->withQueryPaging($builder, $struct->page, $struct->limit);
+    }
+
+    /**
      * 添加沟通记录
      * @param $struct
      */
@@ -25,11 +43,55 @@ class CommunicateService extends Service
     {
         $this->db->begin();
         try{
-            $record = new
+            $worker = $this->userService->getUser();
+
+            $record = new Communicates();
+            $record->fullName = $struct->fullName;
+            $record->workerId = $worker->workerId;
+            $record->mobile = $struct->mobile;
+            $record->partnerId = $struct->partnerId;
+            $record->orderNo = $struct->orderNo;
+            $record->storeId = $struct->storeId;
+            $record->content = $struct->content;
+            $record->isFinish = $struct->isFinish;
+            $record->isComplain = $struct->isComplain;
+            $record->save();
 
             $this->db->commit();
         } catch (\Exception $e) {
             $this->db->rollback();
+            throw new Error(Code::FAILURE_CREATE, $e->getMessage());
         }
+    }
+
+    /**
+     * 获取沟通记录详情
+     * @param $communicateId
+     * @return mixed
+     * @throws Error
+     */
+    public function detail($communicateId)
+    {
+        //查找沟通记录
+        $communicate = Communicates::findFirst($communicateId);
+
+        if (!$communicate) {
+            throw new Error(Code::FAILURE_CREATE, "暂无记录");
+        }
+
+        $data = $communicate->toArray();
+
+        //查找此人相同订单的沟通记录
+        $records = Communicates::find([
+            'mobile = :mobile: and orderNo = :orderNo:',
+            'bind' => [
+                'mobile' => $communicate->mobile,
+                'orderNo' => $communicate->orderNo
+            ]
+        ]);
+
+        $data['records'] = $records;
+
+        return $data;
     }
 }

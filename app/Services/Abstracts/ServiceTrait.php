@@ -7,6 +7,7 @@
 namespace App\Services\Abstracts;
 
 use App\Services\CommunicateService;
+use App\Services\EquityService;
 use App\Services\OrderService;
 use App\Services\UserService;
 use App\Services\UtilService;
@@ -19,6 +20,7 @@ use App\Services\ExampleService;
  * @property UserService $userService
  * @property UtilService $utilService
  * @property OrderService $orderService
+ * @property EquityService $equityService
  * @package App\Services\Abstracts
  */
 trait ServiceTrait

@@ -20,7 +20,14 @@ class AddStruct extends Struct
      * @var string
      * @Validator(type=string,required)
      */
-    public $full_name;
+    public $fullName;
+
+    /**
+     * 订单号
+     * @var string
+     * @Validator(type=string)
+     */
+    public $orderNo;
 
     /**
      * 联系方式
@@ -34,14 +41,14 @@ class AddStruct extends Struct
      * @var int
      * @Validator(type=int)
      */
-    public $partner_id;
+    public $partnerId;
 
     /**
      * 门店ID
      * @var int
      * @Validator(type=int)
      */
-    public $store_id;
+    public $storeId;
 
     /**
      * 沟通记录
@@ -55,13 +62,13 @@ class AddStruct extends Struct
      * @var int
      * @Validator(type=int)
      */
-    public $is_complain;
+    public $isComplain;
 
 
     /**
      * 处理结果
-     * @var string
-     * @Validator(type=string)
+     * @var int
+     * @Validator(type=int)
      */
-    public $result;
+    public $isFinish;
 }
