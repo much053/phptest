@@ -29,7 +29,7 @@ return [
             'prefix'     => '_SKETCH_',
             'host'       => '120.26.161.148',
             'port'       => 6379,
-            'auth'       => 'uniondrug@123',
+            'auth'       => 'juyin@2017',
             'persistent' => false,
             'index'      => 0,
         ],
