@@ -13,7 +13,7 @@ return [
 
         // 全局中间件，会应用在全部路由，优先级在应用定义之前
         'global'      => [
-            'cors', 'token', 'cache', 'favicon', 'trace',
+            'token', 'cors', 'cache', 'favicon', 'trace',
         ],
 
         // 全局中间件，会应用在全部路由，优先级在应用定义之后
