@@ -27,9 +27,9 @@ return [
     'testing' => [
         'options' => [
             'prefix'     => '_SKETCH_',
-            'host'       => '120.26.161.148',
+            'host'       => 'r-bp1bce11bbd535a4.redis.rds.aliyuncs.com',
             'port'       => 6379,
-            'auth'       => 'juyin@2017',
+            'auth'       => 'Juyin2017',
             'persistent' => false,
             'index'      => 0,
         ],
