@@ -17,9 +17,9 @@ return [
     'default' => [
         'options' => [
             'prefix'     => '_SKETCH_',
-            'host'       => '120.26.161.148',
+            'host'       => '127.0.0.1',
             'port'       => 6379,
-            'auth'       => 'juyin@2017',
+            'auth'       => '',
             'persistent' => false,
             'index'      => 0,
         ],
