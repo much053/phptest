@@ -1,6 +1,6 @@
 <?php
 return [
-    "development" => [
+    "testing" => [
         "wxapi_host"    => "http://wxapi.ud.dovecot.cn",
         "app_host"      => "http://app.ud.dovecot.cn",
         "common_host"   => "http://common.ud.dovecot.cn",
@@ -15,9 +15,10 @@ return [
         'data_host'     => 'http://data.turbomedia.cn',
         'erp_host'      => 'http://erp.ud.dovecot.cn',
         'rights_host'   => 'http://rights.service.turbomedia.cn',
-        'partner_host'  => 'http://test.common.turbomedia.cn'
+        'partner_host'  => 'http://test.common.turbomedia.cn',
+        'equity_host'   => 'http://equity.module.dev.turboradio.cn/'
     ],
-    'testing'     => [
+    'development'     => [
         "wxapi_host"    => "http://wxapi.turboradio.cn/",
         "app_host"      => "http://app.turboradio.cn",
         "common_host"   => "http://common.turboradio.cn",
@@ -32,7 +33,8 @@ return [
         'data_host'     => 'http://data.turboradio.cn',
         'erp_host'      => 'http://erp.turboradio.cn',
         'rights_host'   => 'http://rights.service.turbomedia.cn',
-        'partner_host'  => 'http://common.uniondrug.cn'
+        'partner_host'  => 'http://test.common.turbomedia.cn',
+        'equity_host'   => 'http://equity.module.dev.turboradio.cn/'
     ],
     "production"  => [
         'sms_host'      => 'http://121.40.203.138:10081/api/sms/send',
@@ -49,6 +51,7 @@ return [
         'data_host'     => 'http://data.uniondrug.cn',
         'erp_host'      => 'http://erp.uniondrug.cn',
         'rights_host'   => 'http://rights.service.uniondrug.cn',
-        'partner_host'  => 'http://common.uniondrug.cn'
+        'partner_host'  => 'http://common.uniondrug.cn',
+        'equity_host'   => 'http://equity.module.dev.turboradio.cn/'
     ]
 ];

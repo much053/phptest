@@ -8,6 +8,8 @@
 
 namespace App\Services;
 
+use App\Errors\Code;
+use App\Errors\Error;
 use App\Models\UgOrderRecords;
 use App\Services\Abstracts\Service;
 use App\Structs\Results\Equity\RecordResult;
@@ -22,7 +24,22 @@ class EquityService extends Service
 {
     public function getList($struct)
     {
-        $url = "http://equity.module.dev.turboradio.cn/";
+        $url = $this->config->path('host.equity_host').'/equity/paging';
+
+        $options = [
+            'json' => [
+                ''
+            ]
+        ];
+        try {
+            $res = $this->httpClient->post($url, $options);
+        } catch (\Exception $e) {
+            throw new Error(Code::FAILURE_CREATE, "网络繁忙，请稍后重试");
+        }
+
+
+
+
     }
 
     /**
