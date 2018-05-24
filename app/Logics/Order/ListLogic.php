@@ -8,8 +8,8 @@
 namespace App\Logics\Order;
 
 use App\Logics\Abstracts\Logic;
-use App\Structs\Results\Communicate\ListResult;
-use App\Structs\Requests\Communicate\ListStruct;
+use App\Structs\Results\Order\ListResult;
+use App\Structs\Requests\Order\ListStruct;
 
 class ListLogic extends Logic
 {
