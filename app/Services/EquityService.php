@@ -20,9 +20,9 @@ use Phalcon\Mvc\Model\Query\Builder;
  */
 class EquityService extends Service
 {
-    public function getList()
+    public function getList($struct)
     {
-
+        $url = "http://equity.module.dev.turboradio.cn/";
     }
 
     /**

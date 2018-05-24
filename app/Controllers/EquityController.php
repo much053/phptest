@@ -10,8 +10,6 @@ namespace App\Controllers;
 
 use App\Controllers\Abstracts\Base;
 use App\Logics\Equity\RecordLogic;
-use App\Logics\Order\DetailLogic;
-use App\Logics\Order\ListLogic;
 
 /**
  * 权益类

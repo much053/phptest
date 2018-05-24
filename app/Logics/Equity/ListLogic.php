@@ -5,7 +5,7 @@
  * Date: 2018/5/3
  * Time: 下午3:14
  */
-namespace App\Logics\Order;
+namespace App\Logics\Equity;
 
 use App\Logics\Abstracts\Logic;
 use App\Structs\Results\Communicate\ListResult;
@@ -21,7 +21,7 @@ class ListLogic extends Logic
         $struct = ListStruct::factory($payload);
 
         //获取订单详情
-        $orders = $this->orderService->getList($struct);
+        $orders = $this->equityService->getList($struct);
 
         return ListResult::factory($orders);
     }
