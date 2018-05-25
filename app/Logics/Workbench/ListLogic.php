@@ -9,7 +9,7 @@ namespace App\Logics\Workbench;
 
 use App\Logics\Abstracts\Logic;
 use App\Structs\Requests\Workbench\ListStruct;
-use App\Structs\Results\Communicate\ListResult;
+use App\Structs\Results\Workbench\ListResult;
 
 class ListLogic extends Logic
 {
