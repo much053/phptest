@@ -9,6 +9,7 @@
 namespace App\Controllers;
 
 use App\Controllers\Abstracts\Base;
+use App\Logics\Equity\ListLogic;
 use App\Logics\Equity\RecordLogic;
 
 /**
@@ -28,7 +29,7 @@ class EquityController extends Base
 
         $logic = ListLogic::factory($input);
 
-        return $this->serviceServer->withStruct($logic);
+        return $this->serviceServer->withData($logic);
     }
 
     /**

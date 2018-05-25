@@ -23,6 +23,6 @@ class ListLogic extends Logic
         //获取订单详情
         $orders = $this->equityService->getList($struct);
 
-        return ListResult::factory($orders);
+        return $orders;
     }
 }

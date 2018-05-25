@@ -26,20 +26,15 @@ class EquityService extends Service
     {
         $url = $this->config->path('host.equity_host').'/equity/paging';
 
-        $options = [
-            'json' => [
-                ''
-            ]
-        ];
         try {
-            $res = $this->httpClient->post($url, $options);
+            $res = $this->httpClient->post($url);
         } catch (\Exception $e) {
             throw new Error(Code::FAILURE_CREATE, "网络繁忙，请稍后重试");
         }
 
+        $data = json_decode($res->getBody()->__toString(), 1);
 
-
-
+        return $data['data'];
     }
 
     /**
