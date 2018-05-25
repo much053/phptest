@@ -31,6 +31,11 @@ class Row extends Struct
     /**
      * @var string
      */
+    public $workerName;
+
+    /**
+     * @var string
+     */
     public $orderNo;
 
     /**
