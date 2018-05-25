@@ -24,15 +24,22 @@ class ListStruct extends PagingRequest
 
     /**
      * 开始时间
-     * @var int
+     * @var string
      * @Validator(type=string)
      */
     public $startDate;
 
     /**
      * 结束时间
-     * @var int
+     * @var string
      * @Validator(type=string)
      */
     public $endDate;
+
+    /**
+     * 是否处理
+     * @var int
+     * @Validator(type=int)
+     */
+    public $isFinish;
 }

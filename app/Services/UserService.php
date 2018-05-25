@@ -100,6 +100,19 @@ class UserService extends Service
     }
 
     /**
+     * 根据token获取用户信息
+     * @return array
+     */
+    public function getUsers()
+    {
+        $token = $this->serviceSdk->merchant->getMerchantList();
+
+        $data = $this->redis->get($token);
+
+        return Json::decode($data);
+    }
+
+    /**
      * 获取员工权限菜单
      * @return mixed
      */
