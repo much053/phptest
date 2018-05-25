@@ -48,6 +48,7 @@ class CommunicateService extends Service
             $record = new Communicates();
             $record->fullName = $struct->fullName;
             $record->workerId = $worker->workerId;
+            $record->workerName = $worker->workerName;
             $record->mobile = $struct->mobile;
             $record->partnerId = $struct->partnerId;
             $record->orderNo = $struct->orderNo;
@@ -93,5 +94,67 @@ class CommunicateService extends Service
         $data['records'] = $records;
 
         return $data;
+    }
+
+    public function countStatistic($struct)
+    {
+        return [
+            'count' => $this->countAll($struct),
+            'countFinish' => $this->countFinish($struct),
+            'countUnfinish' => $this->countUnfinish($struct)
+        ];
+    }
+
+    public function countAll($struct)
+    {
+        $cond = $this->_get_cond($struct);
+
+        //所有已出来的记录
+        return Communicates::count([
+            implode(' and ', $cond)
+        ]);
+    }
+
+    public function countFinish($struct)
+    {
+        $cond = $this->_get_cond($struct);
+
+        $cond[] = "isFinish = ".Communicates::FINISH;
+
+        //所有已出来的记录
+        return Communicates::count([
+            implode(' and ', $cond)
+        ]);
+    }
+
+    public function countUnfinish($struct)
+    {
+        $cond = $this->_get_cond($struct);
+
+        $cond[] = "isFinish = ".Communicates::UNFINISH;
+
+        //所有已出来的记录
+        return Communicates::count([
+            implode(' and ', $cond)
+        ]);
+    }
+
+    private function _get_cond($struct)
+    {
+        $cond = [];
+
+        if ($struct->workerId) {
+            $cond[] = "workerId = ".$struct->workerId;
+        }
+
+        if ($struct->startDate) {
+            $cond[] = "createdAt >= '".$struct->startDate."'";
+        }
+
+        if ($struct->endDate) {
+            $cond[] = "createdAt <= '".$struct->endDate."'";
+        }
+
+        return $cond;
     }
 }

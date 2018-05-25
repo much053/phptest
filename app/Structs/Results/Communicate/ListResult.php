@@ -8,7 +8,7 @@
  */
 namespace App\Structs\Results\Communicate;
 
-use App\Structs\Results\Example\Row;
+use App\Structs\Requests\Workbench\StatisticResult;
 use Uniondrug\Structs\PaginatorStruct;
 
 /**
@@ -17,8 +17,12 @@ use Uniondrug\Structs\PaginatorStruct;
 class ListResult extends PaginatorStruct
 {
     /**
-     * @var2 Row[]
      * @var \App\Structs\Results\Communicate\Row[]
      */
     public $body;
+
+    /**
+     * @var StatisticResult
+     */
+    public $statistic;
 }
