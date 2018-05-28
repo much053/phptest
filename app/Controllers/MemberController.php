@@ -23,9 +23,9 @@ class MemberController extends Base
      * 获取用户详情
      * @Get('/{id:([0-9]+)}')
      */
-    public function showAction()
+    public function showAction($id)
     {
-        $member = DetailLogic::factory();
+        $member = DetailLogic::factory($id);
 
         return $this->serviceServer->withData($member);
     }

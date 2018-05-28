@@ -1,6 +1,6 @@
 <?php
 return [
-    "testing" => [
+    "development" => [
         "wxapi_host"    => "http://wxapi.ud.dovecot.cn",
         "app_host"      => "http://app.ud.dovecot.cn",
         "common_host"   => "http://common.ud.dovecot.cn",
@@ -18,7 +18,7 @@ return [
         'partner_host'  => 'http://test.common.turbomedia.cn',
         'equity_host'   => 'http://equity.module.dev.turboradio.cn/'
     ],
-    'development'     => [
+    'testing'     => [
         "wxapi_host"    => "http://wxapi.turboradio.cn/",
         "app_host"      => "http://app.turboradio.cn",
         "common_host"   => "http://common.turboradio.cn",

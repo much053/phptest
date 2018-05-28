@@ -128,7 +128,7 @@ class UserService extends Service
         if ($member->hasError()){
             throw new Error($member->getErrno(), "用户不存在");
         }
-
+print_R($member->getData());die;
         return $member->getData()->body;
     }
 
