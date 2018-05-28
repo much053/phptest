@@ -115,6 +115,24 @@ class UserService extends Service
     }
 
     /**
+     * 获取用户详情
+     * @param $memberId
+     * @return mixed
+     */
+    public function getMember($memberId)
+    {
+        $member = $this->serviceSdk->user->getMemberInfo([
+            'memberId' => $memberId
+        ]);
+
+        if ($member->hasError()){
+            throw new Error($member->getErrno(), "用户不存在");
+        }
+
+        return $member->getData()->body;
+    }
+
+    /**
      * 获取员工权限菜单
      * @return mixed
      */

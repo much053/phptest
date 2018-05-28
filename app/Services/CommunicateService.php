@@ -139,6 +139,21 @@ class CommunicateService extends Service
         ]);
     }
 
+    public function update($struct)
+    {
+        $this->db->begin();
+        try {
+            $communicate = Communicates::findFirst($struct['communicateId']);
+            $communicate->assign($struct);
+            $communicate->save();
+
+            $this->db->commit();
+        } catch (\Exception $e) {
+            $this->db->rollback();
+            throw new Error(Code::FAILURE_UPDATE, $e->getMessage());
+        }
+    }
+
     private function _get_cond($struct)
     {
         $cond = [];

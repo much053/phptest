@@ -239,65 +239,6 @@
         ]
     },
     {
-        "name": "symfony/dotenv",
-        "version": "v4.0.9",
-        "version_normalized": "4.0.9.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/dotenv.git",
-            "reference": "afb6923923e22874dac20bd042167ccb8df1d158"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/symfony/dotenv/afb6923923e22874dac20bd042167ccb8df1d158.zip",
-            "reference": "afb6923923e22874dac20bd042167ccb8df1d158",
-            "shasum": ""
-        },
-        "require": {
-            "php": "^7.1.3"
-        },
-        "require-dev": {
-            "symfony/process": "~3.4|~4.0"
-        },
-        "time": "2018-01-03T17:15:19+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "4.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Dotenv\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Registers environment variables from a .env file",
-        "homepage": "https://symfony.com",
-        "keywords": [
-            "dotenv",
-            "env",
-            "environment"
-        ]
-    },
-    {
         "name": "uniondrug/register",
         "version": "2.2.1",
         "version_normalized": "2.2.1.0",
@@ -439,64 +380,6 @@
         ]
     },
     {
-        "name": "symfony/debug",
-        "version": "v4.0.9",
-        "version_normalized": "4.0.9.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/debug.git",
-            "reference": "e1d57cdb357e5b10f5fdacbb0b86689c0a435e6e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/symfony/debug/e1d57cdb357e5b10f5fdacbb0b86689c0a435e6e.zip",
-            "reference": "e1d57cdb357e5b10f5fdacbb0b86689c0a435e6e",
-            "shasum": ""
-        },
-        "require": {
-            "php": "^7.1.3",
-            "psr/log": "~1.0"
-        },
-        "conflict": {
-            "symfony/http-kernel": "<3.4"
-        },
-        "require-dev": {
-            "symfony/http-kernel": "~3.4|~4.0"
-        },
-        "time": "2018-04-30T16:59:37+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "4.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Debug\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Debug Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "symfony/polyfill-mbstring",
         "version": "v1.8.0",
         "version_normalized": "1.8.0.0",
@@ -556,77 +439,6 @@
             "portable",
             "shim"
         ]
-    },
-    {
-        "name": "symfony/console",
-        "version": "v3.4.9",
-        "version_normalized": "3.4.9.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/console.git",
-            "reference": "5b1fdfa8eb93464bcc36c34da39cedffef822cdf"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/symfony/console/5b1fdfa8eb93464bcc36c34da39cedffef822cdf.zip",
-            "reference": "5b1fdfa8eb93464bcc36c34da39cedffef822cdf",
-            "shasum": ""
-        },
-        "require": {
-            "php": "^5.5.9|>=7.0.8",
-            "symfony/debug": "~2.8|~3.0|~4.0",
-            "symfony/polyfill-mbstring": "~1.0"
-        },
-        "conflict": {
-            "symfony/dependency-injection": "<3.4",
-            "symfony/process": "<3.3"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/config": "~3.3|~4.0",
-            "symfony/dependency-injection": "~3.4|~4.0",
-            "symfony/event-dispatcher": "~2.8|~3.0|~4.0",
-            "symfony/lock": "~3.4|~4.0",
-            "symfony/process": "~3.3|~4.0"
-        },
-        "suggest": {
-            "psr/log-implementation": "For using the console logger",
-            "symfony/event-dispatcher": "",
-            "symfony/lock": "",
-            "symfony/process": ""
-        },
-        "time": "2018-04-30T01:22:56+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.4-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Console\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Console Component",
-        "homepage": "https://symfony.com"
     },
     {
         "name": "uniondrug/swoole",
@@ -722,48 +534,6 @@
         ]
     },
     {
-        "name": "uniondrug/service",
-        "version": "2.7.4",
-        "version_normalized": "2.7.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/uniondrug/service.git",
-            "reference": "0a37972fffb8d3f86cf26aa15443cf0209f63828"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/uniondrug/service/0a37972fffb8d3f86cf26aa15443cf0209f63828.zip",
-            "reference": "0a37972fffb8d3f86cf26aa15443cf0209f63828",
-            "shasum": ""
-        },
-        "require": {
-            "uniondrug/framework": "^2.0",
-            "uniondrug/structs": "^2.0"
-        },
-        "time": "2018-05-02T08:23:20+00:00",
-        "type": "project",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Uniondrug\\Service\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "proprietary"
-        ],
-        "authors": [
-            {
-                "name": "Uniondrug Dev Team",
-                "email": "dev@uniondrug.cn"
-            }
-        ],
-        "description": "Uniondrug Micro Service Component for uniondrug/framework",
-        "keywords": [
-            "phalcon"
-        ]
-    },
-    {
         "name": "uniondrug/trace",
         "version": "2.2.5",
         "version_normalized": "2.2.5.0",
@@ -855,49 +625,6 @@
             "cron",
             "schedule"
         ]
-    },
-    {
-        "name": "uniondrug/framework",
-        "version": "2.8.5",
-        "version_normalized": "2.8.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/uniondrug/framework.git",
-            "reference": "38a80b16814160e8c31517a30a97b161ea86b9f6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/uniondrug/framework/38a80b16814160e8c31517a30a97b161ea86b9f6.zip",
-            "reference": "38a80b16814160e8c31517a30a97b161ea86b9f6",
-            "shasum": ""
-        },
-        "require": {
-            "ext-phalcon": "^3.2.0",
-            "php": ">=7.0",
-            "symfony/dotenv": "^4.0"
-        },
-        "time": "2018-05-16T07:48:02+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Uniondrug\\Framework\\": "src/"
-            },
-            "files": [
-                "helpers.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Uniondrug Dev Team",
-                "email": "dev@uniondrug.cn"
-            }
-        ],
-        "description": "Uniondrug framework. A mini framework based on Phalcon"
     },
     {
         "name": "uniondrug/console",
@@ -1150,41 +877,6 @@
         "description": "Uniondrug Middleware Component for uniondrug/framework"
     },
     {
-        "name": "uniondrug/service-sdk",
-        "version": "1.0.25",
-        "version_normalized": "1.0.25.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/uniondrug/service-sdk.git",
-            "reference": "87b37fad61ede1a515b2defb871bbb1f703bb2d4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://files.phpcomposer.com/files/uniondrug/service-sdk/87b37fad61ede1a515b2defb871bbb1f703bb2d4.zip",
-            "reference": "87b37fad61ede1a515b2defb871bbb1f703bb2d4",
-            "shasum": ""
-        },
-        "time": "2018-05-18T04:08:34+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Uniondrug\\ServiceSdk\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "wsfuyibing",
-                "email": "websearch@163.com"
-            }
-        ],
-        "description": "ServiceSDK"
-    },
-    {
         "name": "uniondrug/structs",
         "version": "2.14.2",
         "version_normalized": "2.14.2.0",
@@ -1356,5 +1048,313 @@
             "phalcon",
             "redis"
         ]
+    },
+    {
+        "name": "symfony/dotenv",
+        "version": "v4.0.11",
+        "version_normalized": "4.0.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/dotenv.git",
+            "reference": "afb6923923e22874dac20bd042167ccb8df1d158"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/dotenv/afb6923923e22874dac20bd042167ccb8df1d158.zip",
+            "reference": "afb6923923e22874dac20bd042167ccb8df1d158",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3"
+        },
+        "require-dev": {
+            "symfony/process": "~3.4|~4.0"
+        },
+        "time": "2018-01-03T17:15:19+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Dotenv\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Registers environment variables from a .env file",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "dotenv",
+            "env",
+            "environment"
+        ]
+    },
+    {
+        "name": "uniondrug/framework",
+        "version": "2.8.6",
+        "version_normalized": "2.8.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/framework.git",
+            "reference": "19e58a21094ad72b83c0639b058fa036af6dbcb4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/framework/19e58a21094ad72b83c0639b058fa036af6dbcb4.zip",
+            "reference": "19e58a21094ad72b83c0639b058fa036af6dbcb4",
+            "shasum": ""
+        },
+        "require": {
+            "ext-phalcon": "^3.2.0",
+            "php": ">=7.0",
+            "symfony/dotenv": "^4.0"
+        },
+        "time": "2018-05-18T10:37:29+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Framework\\": "src/"
+            },
+            "files": [
+                "helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug framework. A mini framework based on Phalcon"
+    },
+    {
+        "name": "uniondrug/service",
+        "version": "2.7.7",
+        "version_normalized": "2.7.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/service.git",
+            "reference": "f820fd495d49ec4503873a6b75eae974459ba65f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/service/f820fd495d49ec4503873a6b75eae974459ba65f.zip",
+            "reference": "f820fd495d49ec4503873a6b75eae974459ba65f",
+            "shasum": ""
+        },
+        "require": {
+            "uniondrug/framework": "^2.0",
+            "uniondrug/structs": "^2.0"
+        },
+        "time": "2018-05-22T01:35:04+00:00",
+        "type": "project",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\Service\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Uniondrug Dev Team",
+                "email": "dev@uniondrug.cn"
+            }
+        ],
+        "description": "Uniondrug Micro Service Component for uniondrug/framework",
+        "keywords": [
+            "phalcon"
+        ]
+    },
+    {
+        "name": "uniondrug/service-sdk",
+        "version": "1.0.26",
+        "version_normalized": "1.0.26.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/uniondrug/service-sdk.git",
+            "reference": "1bf6b6c5d89084880533766036dbacbf779f99f2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/uniondrug/service-sdk/1bf6b6c5d89084880533766036dbacbf779f99f2.zip",
+            "reference": "1bf6b6c5d89084880533766036dbacbf779f99f2",
+            "shasum": ""
+        },
+        "time": "2018-05-25T06:21:49+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Uniondrug\\ServiceSdk\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "wsfuyibing",
+                "email": "websearch@163.com"
+            }
+        ],
+        "description": "ServiceSDK"
+    },
+    {
+        "name": "symfony/debug",
+        "version": "v4.0.11",
+        "version_normalized": "4.0.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/debug.git",
+            "reference": "4e7c98de67cc4171d4c986554e09a511da40f3d8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/debug/4e7c98de67cc4171d4c986554e09a511da40f3d8.zip",
+            "reference": "4e7c98de67cc4171d4c986554e09a511da40f3d8",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.1.3",
+            "psr/log": "~1.0"
+        },
+        "conflict": {
+            "symfony/http-kernel": "<3.4"
+        },
+        "require-dev": {
+            "symfony/http-kernel": "~3.4|~4.0"
+        },
+        "time": "2018-05-16T09:05:32+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Debug\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Debug Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/console",
+        "version": "v3.4.11",
+        "version_normalized": "3.4.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/console.git",
+            "reference": "36f83f642443c46f3cf751d4d2ee5d047d757a27"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/symfony/console/36f83f642443c46f3cf751d4d2ee5d047d757a27.zip",
+            "reference": "36f83f642443c46f3cf751d4d2ee5d047d757a27",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.5.9|>=7.0.8",
+            "symfony/debug": "~2.8|~3.0|~4.0",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "conflict": {
+            "symfony/dependency-injection": "<3.4",
+            "symfony/process": "<3.3"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~3.3|~4.0",
+            "symfony/dependency-injection": "~3.4|~4.0",
+            "symfony/event-dispatcher": "~2.8|~3.0|~4.0",
+            "symfony/lock": "~3.4|~4.0",
+            "symfony/process": "~3.3|~4.0"
+        },
+        "suggest": {
+            "psr/log-implementation": "For using the console logger",
+            "symfony/event-dispatcher": "",
+            "symfony/lock": "",
+            "symfony/process": ""
+        },
+        "time": "2018-05-16T08:49:21+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Console\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Console Component",
+        "homepage": "https://symfony.com"
     }
 ]

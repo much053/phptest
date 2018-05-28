@@ -12,6 +12,7 @@ use App\Controllers\Abstracts\Base;
 use App\Logics\Communicate\AddLogic;
 use App\Logics\Communicate\DetailLogic;
 use App\Logics\Communicate\ListLogic;
+use App\Logics\Communicate\UpdateLogic;
 
 /**
  * Class CommunicateController
@@ -55,10 +56,15 @@ class CommunicateController extends Base
     }
 
     /**
-     * @Put('/{id}')
+     * @Post('/{id}')
      */
-    public function updateAction()
+    public function updateAction($id)
     {
+        $input = $this->request->getJsonRawBody(1);
+        $input['communicateId'] = $id;
 
+        UpdateLogic::factory($input);
+
+        return $this->serviceServer->withSuccess();
     }
 }
