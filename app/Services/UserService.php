@@ -105,11 +105,13 @@ class UserService extends Service
      */
     public function getUsers()
     {
-        $token = $this->serviceSdk->merchant->getMerchantList();
+        $user = $this->getUser();
 
-        $data = $this->redis->get($token);
+        $list = $this->serviceSdk->merchant->getWorkerList([
+            'merchantId' => $user->merchantId
+        ]);
 
-        return Json::decode($data);
+        return $list->getData()->body;
     }
 
     /**

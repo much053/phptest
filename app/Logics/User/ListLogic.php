@@ -10,7 +10,7 @@ namespace App\Logics\User;
 use App\Logics\Abstracts\Logic;
 use App\Structs\Results\User\DetailResult;
 
-class DetailLogic extends Logic
+class ListLogic extends Logic
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class DetailLogic extends Logic
     function run($payload)
     {
         //获取订单详情
-        $user = $this->userService->getUser();
+        $users = $this->userService->getUsers();
 
-        return DetailResult::factory($user);
+        return $users;
     }
 }

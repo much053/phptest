@@ -10,6 +10,7 @@ namespace App\Controllers;
 
 use App\Controllers\Abstracts\Base;
 use App\Logics\User\DetailLogic;
+use App\Logics\User\ListLogic;
 use App\Logics\User\LoginLogic;
 use App\Logics\User\LogoutLogic;
 use App\Logics\User\MenuLogic;
@@ -37,6 +38,7 @@ class UserController extends Base
     }
 
     /**
+     * 用户退出
      * @Post('/logout')
      * @return \Phalcon\Http\Response
      */
@@ -48,6 +50,7 @@ class UserController extends Base
     }
 
     /**
+     * 获取用户权限菜单
      * @Get('/menu')
      * @return \Phalcon\Http\Response
      */
@@ -59,6 +62,7 @@ class UserController extends Base
     }
 
     /**
+     * 获取用户详情
      * @Get('')
      */
     public function showAction()
@@ -66,5 +70,16 @@ class UserController extends Base
         $user = DetailLogic::factory();
 
         return $this->serviceServer->withStruct($user);
+    }
+
+    /**
+     * 获取用户详情
+     * @Get('/list')
+     */
+    public function listAction()
+    {
+        $user = ListLogic::factory();
+
+        return $this->serviceServer->withListData($user);
     }
 }
