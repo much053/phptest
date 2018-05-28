@@ -163,11 +163,11 @@ class CommunicateService extends Service
         }
 
         if ($struct->startDate) {
-            $cond[] = "createdAt >= '".$struct->startDate."'";
+            $cond[] = "gmtCreated >= '".$struct->startDate."'";
         }
 
         if ($struct->endDate) {
-            $cond[] = "createdAt <= '".$struct->endDate."'";
+            $cond[] = "gmtCreated <= '".$struct->endDate."'";
         }
 
         return $cond;
