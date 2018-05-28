@@ -4,7 +4,7 @@ return [
         "wxapi_host"    => "http://wxapi.ud.dovecot.cn",
         "app_host"      => "http://app.ud.dovecot.cn",
         "common_host"   => "http://common.ud.dovecot.cn",
-        "admin_host"    => "http://admin.ud.dovecot.cn",
+        "admin_host"    => "http://admin.turboradio.cn",
         'activity_host' => 'http://121.40.199.140:7777',
         'cms_url'       => 'http://cms.uniondrug.cn',
         'report_host'   => "http://121.40.199.140:9988",
