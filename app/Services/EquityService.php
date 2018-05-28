@@ -12,6 +12,7 @@ use App\Errors\Code;
 use App\Errors\Error;
 use App\Models\UgOrderRecords;
 use App\Services\Abstracts\Service;
+use App\Structs\Requests\Equity\RecordStruct;
 use App\Structs\Results\Equity\RecordResult;
 use Phalcon\Mvc\Model\Query\Builder;
 
@@ -42,7 +43,7 @@ class EquityService extends Service
      * @param RecordResult $struct
      * @return \stdClass
      */
-    public function getConsumeRecords(RecordResult $struct)
+    public function getConsumeRecords(RecordStruct $struct)
     {
         $builder = new Builder();
         $builder->columns('a.id as orderId,a.order_no as orderNo,show_amount as totalAmount,a.created_at as createdAt,partner_name as partnerName,shop_id as isOnline,service_name as serviceName');
@@ -51,8 +52,8 @@ class EquityService extends Service
         $builder->join('App\\Models\\UgOrderClaims', 'c.order_no = a.order_no', 'c');
         $builder->orderBy('a.id desc');
 
-        $orders = $this->withQueryPaging($builder, $struct->page, $struct->limit);
+        $records = $this->withQueryPaging($builder, $struct->page, $struct->limit);
 
-        return $orders;
+        return $records;
     }
 }
