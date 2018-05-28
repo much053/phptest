@@ -55,7 +55,7 @@ class PartnerService extends Service
     public function getStores($partnerId)
     {
         $url = $this->config->path('host.admin_host').'/api/partners/store';
-
+echo $url;die;
         $options = [
             'query' => [
                 'partnerId' => $partnerId
