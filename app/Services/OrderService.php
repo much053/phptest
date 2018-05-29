@@ -37,8 +37,9 @@ class OrderService extends Service
 
         if ($struct->equityNo) {
             $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
-            if ($equity->memberId) {
-                $builder->andWhere("member_id = ".$equity->memberId);
+            if ($equity->id) {
+                $builder->andWhere("account_id = ".$equity->id);
+                $builder->join("App\\Models\\UgOrderClaims", "c.order_no = a.order_no", "c");
             }
         }
 
