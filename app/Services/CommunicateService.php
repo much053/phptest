@@ -122,7 +122,8 @@ class CommunicateService extends Service
             'bind' => [
                 'mobile' => $communicate->mobile,
                 'orderNo' => $communicate->orderNo
-            ]
+            ],
+            'order' => "communicateId desc"
         ]);
 
         $data['records'] = $records;
