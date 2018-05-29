@@ -37,23 +37,9 @@ class ListStruct extends PagingRequest
     public $mobile;
 
     /**
-     * 开始时间
-     * @var string
-     * @Validator(type=string)
-     */
-    public $startDate;
-
-    /**
-     * 结束时间
-     * @var string
-     * @Validator(type=string)
-     */
-    public $endDate;
-
-    /**
-     * 是否处理完毕
+     * 手机号类型
      * @var int
      * @Validator(type=int)
      */
-    public $isFinish;
+    public $mobileType;
 }
