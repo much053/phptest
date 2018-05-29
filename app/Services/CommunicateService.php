@@ -27,7 +27,7 @@ class CommunicateService extends Service
      * @param $struct
      * @return \stdClass
      */
-    public function getList($struct)
+    public function getList(ListStruct $struct)
     {
         $builder = new Builder();
         $builder->from(["a" => "App\\Models\\Communicates"]);
