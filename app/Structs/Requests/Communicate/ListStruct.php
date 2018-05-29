@@ -66,8 +66,8 @@ class ListStruct extends PagingRequest
 
     /**
      * 是否处理
-     * @var int
-     * @Validator(type=int)
+     * @var string
+     * @Validator(type=string)
      */
     public $isFinish;
 }

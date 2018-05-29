@@ -56,7 +56,7 @@ class CommunicateService extends Service
             $builder->andWhere("gmtCreated <= '".$struct->endDate." 23:59:59'");
         }
 
-        if (isset($struct->isFinish)) {
+        if ($struct->isFinish != '') {
             $builder->andWhere("isFinish = ".$struct->isFinish);
         }
 
