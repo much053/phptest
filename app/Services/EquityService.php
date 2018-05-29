@@ -27,6 +27,7 @@ class EquityService extends Service
     {
         $url = $this->config->path('host.equity_host').'/equity/paging';
 
+
         try {
             $res = $this->httpClient->post($url);
         } catch (\Exception $e) {
