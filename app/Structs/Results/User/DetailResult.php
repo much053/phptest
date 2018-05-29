@@ -33,7 +33,12 @@ class DetailResult extends Struct
     /**
      * @var string
      */
-    public $workerRole;
+    public $workerRoleId;
+
+    /**
+     * @var string
+     */
+    public $workerRoleName;
 
     /**
      * @var int

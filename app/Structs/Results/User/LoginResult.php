@@ -39,7 +39,14 @@ class LoginResult extends Struct
      * @var string
      * @Validator(type=string,required)
      */
-    public $workerRole;
+    public $workerRoleId;
+
+    /**
+     * 员工角色
+     * @var string
+     * @Validator(type=string,required)
+     */
+    public $workerRoleName;
 
     /**
      * 用户ID

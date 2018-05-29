@@ -73,12 +73,13 @@ class UserService extends Service
             'token' => $token,
             'workerId' => $user->workerId,
             'workerName' => $user->name,
-            'workerRole' => $user->roleName,
+            'workerRoleId' => $user->roleId,
+            'workerRoleName' => $user->roleName,
             'memberId' => $user->memberId,
             'mobile' => $user->mobile,
             'merchantId' => $user->merchantId,
             'merchantName' => $user->merchant->name,
-            'merchantLogo' => $user->merchant->logo
+            'merchantLogo' => $user->merchant->logo,
         ];
 
         $this->redis->set($token, Json::encode($data));
@@ -136,8 +137,62 @@ class UserService extends Service
      * 获取员工权限菜单
      * @return mixed
      */
-    public function getMenu($user)
+    public function getMenu()
     {
+        $user = $this->userService->getUser();
+
+        if ($user->workerRoleId == 15) {
+            $menu = '[
+                        {
+                            "text": "工作台",
+                            "hideInBreadcrumb": true,
+                            "translate": "",
+                            "group": false,
+                            "children": [
+                                
+                            ]
+                        },
+                        {
+                            "text": "统计",
+                            "hideInBreadcrumb": true,
+                            "translate": "",
+                            "group": false,
+                            "children": [
+                                
+                            ]
+                        }
+                    ]';
+        } else {
+            $menu = '[
+                        {
+                            "text": "直付统计",
+                            "hideInBreadcrumb": true,
+                            "translate": "",
+                            "group": false,
+                            "children": [
+                                
+                            ]
+                        },
+                        {
+                            "text": "增值服务统计",
+                            "hideInBreadcrumb": true,
+                            "translate": "",
+                            "group": false,
+                            "children": [
+                                
+                            ]
+                        },
+                        {
+                            "text": "资金池变动记录",
+                            "hideInBreadcrumb": true,
+                            "translate": "",
+                            "group": false,
+                            "children": [
+                                
+                            ]
+                        }
+                    ]';
+        }
         $json = '{
                     "app": {
                         "name": "客服后台",
@@ -148,28 +203,7 @@ class UserService extends Service
                         "avatar": "./assets/img/zorro.svg",
                         "email": "cipchk@qq.com"
                     },
-                    "menu": [
-                        {
-                            "text": "",
-                            "hideInBreadcrumb": true,
-                            "translate": "",
-                            "group": false,
-                            "children": [
-                                {
-                                    "text": "首页",
-                                    "translate": "dashboard",
-                                    "link": "/dashboard/v1",
-                                    "icon": "icon-speedometer"
-                                },
-                                {
-                                    "text": "工作台",
-                                    "translate": "工作台",
-                                    "link": "/workbench",
-                                    "icon": "icon-speedometer"
-                                }
-                            ]
-                        }
-                    ]
+                    "menu": '.$menu.'
                 }';
         return json_decode($json, 1);
     }

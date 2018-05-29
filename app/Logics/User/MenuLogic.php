@@ -19,9 +19,7 @@ class MenuLogic extends Logic
     public function run($payload)
     {
         // TODO: Implement run() method.
-        $user = $this->userService->getUser();
-
-        $menu = $this->userService->getMenu($user);
+        $menu = $this->userService->getMenu();
 
         return $menu;
     }
