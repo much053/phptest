@@ -27,6 +27,22 @@ class OrderService extends Service
         $builder->from(["a" => "App\\Models\\UgOrderRecords"]);
         $builder->orderBy('id desc');
 
+        if ($struct->orderNo) {
+            $builder->where("order_no = '".$struct->orderNo."'");
+        }
+
+        if ($struct->mobile) {
+            $builder->andWhere("member_mobile = '".$struct->mobile."'");
+        }
+
+        if ($struct->equityNo) {
+            $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
+            if ($equity) {
+                $builder->andWhere("member_id = ".$equity->memberId);
+            }
+        }
+
+
         $orders = $this->withQueryPaging($builder, $struct->page, $struct->limit);
         return $orders;
     }
