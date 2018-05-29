@@ -64,6 +64,16 @@ class Row extends Struct
     public $isComplain;
 
     /**
+     * @var int
+     */
+    public $fromPlat;
+
+    /**
+     * @var int
+     */
+    public $fromPlatText;
+
+    /**
      * @var string
      */
     public $gmtCreated;
