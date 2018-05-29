@@ -43,7 +43,9 @@ class CommunicateService extends Service
         if ($struct->equityNo) {
             $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
             $member = $this->userService->getMember($equity->memberId);
-            $builder->andWhere("mobile = '".$member->mobile."'");
+            if ($member) {
+                $builder->andWhere("mobile = '".$member->mobile."'");
+            }
         }
 
         if ($struct->startDate) {
@@ -54,7 +56,7 @@ class CommunicateService extends Service
             $builder->andWhere("gmtCreated <= '".$struct->endDate." 23:59:59'");
         }
 
-        if ($struct->isFinish) {
+        if (isset($struct->isFinish)) {
             $builder->andWhere("isFinish = ".$struct->isFinish);
         }
 

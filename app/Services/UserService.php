@@ -125,10 +125,6 @@ class UserService extends Service
             'memberId' => $memberId
         ]);
 
-        if ($member->hasError()){
-            throw new Error($member->getErrno(), "用户不存在");
-        }
-
         return $member->getData();
     }
 
