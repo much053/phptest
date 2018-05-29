@@ -69,7 +69,7 @@ class Row extends Struct
     public $fromPlat;
 
     /**
-     * @var int
+     * @var string
      */
     public $fromPlatText;
 
