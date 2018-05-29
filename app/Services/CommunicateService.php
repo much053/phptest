@@ -60,6 +60,10 @@ class CommunicateService extends Service
             $builder->andWhere("isFinish = ".$struct->isFinish);
         }
 
+        if ($struct->workerId) {
+            $builder->andWhere("workerId = ".$struct->workerId);
+        }
+
         $builder->orderBy('communicateId desc');
 
         return $this->withQueryPaging($builder, $struct->page, $struct->limit);
