@@ -10,6 +10,7 @@ namespace App\Services;
 
 use App\Errors\Code;
 use App\Errors\Error;
+use App\Models\UgOrderClaims;
 use App\Models\UgOrderRecords;
 use App\Services\Abstracts\Service;
 use App\Structs\Requests\Equity\RecordStruct;
@@ -27,6 +28,19 @@ class EquityService extends Service
     {
         $url = $this->config->path('host.equity_host').'/equity/paging';
 
+        if ($struct->mobile) {
+            $member = $this->serviceSdk->user->getMemberInfo(['mobile' => $struct->mobile])->getData();
+            $option['memberId'] = $member->memberId;
+        }
+
+        if ($struct->equityNo) {
+            $option['equityNo'] = $struct->equityNo;
+        }
+
+        if ($struct->orderNo) {
+            $claim = UgOrderClaims::findFirstByOrderNo($struct->orderNo);
+            $option['equityId'] = $claim->account_id;
+        }
 
         try {
             $res = $this->httpClient->post($url);

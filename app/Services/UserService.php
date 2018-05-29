@@ -125,6 +125,10 @@ class UserService extends Service
             'memberId' => $memberId
         ]);
 
+        if ($member->hasError()){
+            return false;
+        }
+
         return $member->getData();
     }
 
