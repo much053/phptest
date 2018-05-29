@@ -27,7 +27,7 @@ class CommunicateService extends Service
      * @param $struct
      * @return \stdClass
      */
-    public function getList(ListStruct $struct)
+    public function getList($struct)
     {
         $builder = new Builder();
         $builder->from(["a" => "App\\Models\\Communicates"]);
@@ -44,6 +44,18 @@ class CommunicateService extends Service
             $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
             $member = $this->userService->getMember($equity->memberId);
             $builder->andWhere("mobile = '".$member->mobile."'");
+        }
+
+        if ($struct->startDate) {
+            $builder->andWhere("gmtCreated >= '".$struct->startDate."'");
+        }
+
+        if ($struct->endDate) {
+            $builder->andWhere("gmtCreated <= '".$struct->endDate." 23:59:59'");
+        }
+
+        if ($struct->isFinish) {
+            $builder->andWhere("isFinish = ".$struct->isFinish);
         }
 
         $builder->orderBy('communicateId desc');
