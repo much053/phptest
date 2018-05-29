@@ -37,7 +37,7 @@ class OrderService extends Service
 
         if ($struct->equityNo) {
             $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
-            if ($equity) {
+            if ($equity->memberId) {
                 $builder->andWhere("member_id = ".$equity->memberId);
             }
         }
