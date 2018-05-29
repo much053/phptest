@@ -38,6 +38,27 @@ class EquityService extends Service
         return $data['data'];
     }
 
+    public function getDetailByEquityNo($equityNo)
+    {
+        $url = $this->config->path('host.equity_host').'/equity/detail';
+
+        $options = [
+            'json' => [
+                'equityNo' => $equityNo
+            ]
+        ];
+
+        try {
+            $res = $this->httpClient->post($url, $options);
+        } catch (\Exception $e) {
+            throw new Error(Code::FAILURE_CREATE, "网络繁忙，请稍后重试");
+        }
+
+        $data = json_decode($res->getBody()->__toString());
+
+        return $data->data;
+    }
+
     /**
      * 获取权益消费记录
      * @param RecordResult $struct

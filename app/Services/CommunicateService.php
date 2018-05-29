@@ -12,6 +12,7 @@ use App\Errors\Code;
 use App\Errors\Error;
 use App\Models\Communicates;
 use App\Services\Abstracts\Service;
+use App\Structs\Requests\Communicate\ListStruct;
 use Phalcon\Mvc\Model\Query\Builder;
 
 /**
@@ -26,10 +27,25 @@ class CommunicateService extends Service
      * @param $struct
      * @return \stdClass
      */
-    public function getList($struct)
+    public function getList(ListStruct $struct)
     {
         $builder = new Builder();
         $builder->from(["a" => "App\\Models\\Communicates"]);
+
+        if ($struct->mobile) {
+            $builder->where("mobile = '".$struct->mobile."'");
+        }
+
+        if ($struct->orderNo) {
+            $builder->andWhere("orderNo = '".$struct->orderNo."'");
+        }
+
+        if ($struct->equityNo) {
+            $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
+            $member = $this->userService->getMember($equity->memberId);
+            $builder->andWhere("mobile = '".$member->mobile."'");
+        }
+
         $builder->orderBy('communicateId desc');
 
         return $this->withQueryPaging($builder, $struct->page, $struct->limit);
