@@ -30,7 +30,7 @@ class OrderService extends Service
         $builder = new Builder();
         $builder->columns('a.id as orderId,a.order_no as orderNo,show_amount as totalAmount,a.created_at as createdAt,partner_name as partnerName,store_name as storeName,assistant_name as assistantName,shop_id as isOnline,service_name as serviceName,sale_amount as saleAmount,checked_at as checkedAt,a.status,e.erp_sn as erpSn,e.erp_img as erpImg');
         $builder->from(["a" => "App\\Models\\UgOrderRecords"]);
-        $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e");
+        $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e", "left");
         $builder->orderBy('a.id desc');
 
         if ($struct->orderNo) {
@@ -49,7 +49,7 @@ class OrderService extends Service
             $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
             if ($equity->id) {
                 $builder->andWhere("account_id = ".$equity->id);
-                $builder->join("App\\Models\\UgOrderClaims", "c.order_no = a.order_no", "c");
+                $builder->join("App\\Models\\UgOrderClaims", "c.order_no = a.order_no", "c", "left");
             }
         }
 
@@ -68,7 +68,6 @@ class OrderService extends Service
         if ($struct->productId) {
             $builder->andWhere("service_id = '".$struct->productId."'");
         }
-
 
         $orders = $this->withQueryPaging($builder, $struct->page, $struct->limit);
         return $orders;
