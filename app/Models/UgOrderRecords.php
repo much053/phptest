@@ -86,25 +86,14 @@ class UgOrderRecords extends BaseModel
         );
     }
 
-    //判断药品是否全部可保
-    public function countItems(){
-        $items = $this->items;
-        $pass = 0;
-        $unpass = 0;
-        if($items){
-            foreach($items as $item){
-                if($item->is_guarantee == 1){
-                    $pass++;
-                }else{
-                    if($item->batch_number != 'None'){
-                        $unpass++;
-                    }
-                }
-            }
-        }
-        return [
-            'pass_count' => $pass,
-            'unpass_count' => $unpass
-        ];
+    /**
+     * 获取订单状态文本
+     * @return mixed
+     */
+    public function getStatusText()
+    {
+        $arr = ['0' => '待支付', '1' => '待激活', '2' => '审核通过', '3' => '待审核', '4' => '审核驳回', '-1' => '已撤销'];
+
+        return $arr[$this->status];
     }
 }

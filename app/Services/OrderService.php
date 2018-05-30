@@ -20,15 +20,25 @@ use Phalcon\Mvc\Model\Query\Builder;
  */
 class OrderService extends Service
 {
+    /**
+     * 获取订单列表数据
+     * @param ListStruct $struct
+     * @return \stdClass
+     */
     public function getList(ListStruct $struct)
     {
         $builder = new Builder();
-        $builder->columns('a.id as orderId,a.order_no as orderNo,show_amount as totalAmount,created_at as createdAt,partner_name as partnerName,shop_id as isOnline,service_name as serviceName');
+        $builder->columns('a.id as orderId,a.order_no as orderNo,show_amount as totalAmount,a.created_at as createdAt,partner_name as partnerName,store_name as storeName,assistant_name as assistantName,shop_id as isOnline,service_name as serviceName,sale_amount as saleAmount,checked_at as checkedAt,a.status,e.erp_sn as erpSn,e.erp_img as erpImg');
         $builder->from(["a" => "App\\Models\\UgOrderRecords"]);
-        $builder->orderBy('id desc');
+        $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e");
+        $builder->orderBy('a.id desc');
 
         if ($struct->orderNo) {
-            $builder->where("order_no = '".$struct->orderNo."'");
+            $builder->where("a.order_no = '".$struct->orderNo."'");
+        }
+
+        if ($struct->isDirect != '') {
+            $builder->andWhere("is_direct = '".$struct->isDirect."'");
         }
 
         if ($struct->mobile) {
@@ -41,6 +51,22 @@ class OrderService extends Service
                 $builder->andWhere("account_id = ".$equity->id);
                 $builder->join("App\\Models\\UgOrderClaims", "c.order_no = a.order_no", "c");
             }
+        }
+
+        if ($struct->partnerId) {
+            $builder->andWhere("partner_id = ".$struct->partnerId);
+        }
+
+        if ($struct->storeId) {
+            $builder->andWhere("store_id = ".$struct->storeId);
+        }
+
+        if ($struct->erpSn) {
+            $builder->andWhere("erp_sn = '".$struct->erpSn."'");
+        }
+
+        if ($struct->productId) {
+            $builder->andWhere("service_id = '".$struct->productId."'");
         }
 
 

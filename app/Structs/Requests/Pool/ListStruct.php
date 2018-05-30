@@ -45,13 +45,6 @@ class ListStruct extends PagingRequest
     public $mobileType;
 
     /**
-     * 时间类型 1 创建时间 2 激活时间 3 审核时间
-     * @var int
-     * @Validator(type=int)
-     */
-    public $dateType = 1;
-
-    /**
      * 开始时间
      * @var string
      * @Validator(type=string)
@@ -71,46 +64,4 @@ class ListStruct extends PagingRequest
      * @Validator(type=int)
      */
     public $isOnline;
-
-    /**
-     * 连锁ID
-     * @var int
-     * @Validator(type=int)
-     */
-    public $partnerId;
-
-    /**
-     * Erp流水号
-     * @var string
-     * @Validator(type=string)
-     */
-    public $erpSn;
-
-    /**
-     * 门店ID
-     * @var int
-     * @Validator(type=int)
-     */
-    public $storeId;
-
-    /**
-     * 审核状态
-     * @var int
-     * @Validator(type=int)
-     */
-    public $status;
-
-    /**
-     * 审核状态
-     * @var int
-     * @Validator(type=int)
-     */
-    public $productId;
-
-    /**
-     * 是否是直付订单
-     * @var int
-     * @Validator(type=int)
-     */
-    public $isDirect;
 }

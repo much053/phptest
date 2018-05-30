@@ -31,11 +31,6 @@ class Row extends Struct
     /**
      * @var string
      */
-    public $saleAmount;
-
-    /**
-     * @var string
-     */
     public $totalAmount;
 
     /**
@@ -51,35 +46,5 @@ class Row extends Struct
     /**
      * @var string
      */
-    public $storeName;
-
-    /**
-     * @var string
-     */
-    public $assistantName;
-
-    /**
-     * @var string
-     */
-    public $erpSn;
-
-    /**
-     * @var string
-     */
     public $isOnline;
-
-    /**
-     * @var string
-     */
-    public $status;
-
-    /**
-     * @var string
-     */
-    public $statusText;
-
-    /**
-     * @var string
-     */
-    public $erpImg;
 }
