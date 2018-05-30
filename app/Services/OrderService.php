@@ -107,7 +107,7 @@ class OrderService extends Service
             'onlineDetail' => [
                 'waterNo' => $order->shopOrder->water_no,
                 'comment' => $order->shopOrder->comment,
-                'statusText' => $order->shopOrder->getStatusText(),
+                'statusText' => $order->shopOrder?$order->shopOrder->getStatusText():'',
                 'consigne' => $order->shopOrder->consigne,
                 'consigneAddress' => $order->shopOrder->consigne_address,
                 'consigneMobile' => $order->shopOrder->consigne_mobile,
