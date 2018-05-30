@@ -142,56 +142,37 @@ class UserService extends Service
         $user = $this->userService->getUser();
 
         if ($user->workerRoleId == 15) {
-            $menu = '[
-                        {
-                            "text": "工作台",
-                            "hideInBreadcrumb": true,
-                            "translate": "",
-                            "group": false,
-                            "children": [
-                                
-                            ]
-                        },
-                        {
-                            "text": "统计",
-                            "hideInBreadcrumb": true,
-                            "translate": "",
-                            "group": false,
-                            "children": [
-                                
-                            ]
-                        }
-                    ]';
+            $menu = '{
+                        "text": "工作台",
+                        "translate": "工作台",
+                        "link": "/workbench",
+                        "icon": "icon-speedometer"
+                    },
+                    {
+                        "text": "统计",
+                        "translate": "统计",
+                        "link": "/statistics",
+                        "icon": "icon-speedometer"
+                    }';
         } else {
-            $menu = '[
-                        {
-                            "text": "直付统计",
-                            "hideInBreadcrumb": true,
-                            "translate": "",
-                            "group": false,
-                            "children": [
-                                
-                            ]
-                        },
-                        {
-                            "text": "增值服务统计",
-                            "hideInBreadcrumb": true,
-                            "translate": "",
-                            "group": false,
-                            "children": [
-                                
-                            ]
-                        },
-                        {
-                            "text": "资金池变动记录",
-                            "hideInBreadcrumb": true,
-                            "translate": "",
-                            "group": false,
-                            "children": [
-                                
-                            ]
-                        }
-                    ]';
+            $menu = '{
+                        "text": "直付统计",
+                        "translate": "直付统计",
+                        "link": "/direct",
+                        "icon": "icon-speedometer"
+                    },
+                    {
+                        "text": "增值服务统计",
+                        "translate": "增值服务统计",
+                        "link": "/appreciate",
+                        "icon": "icon-speedometer"
+                    },
+                    {
+                        "text": "资金池变动记录",
+                        "translate": "资金池变动记录",
+                        "link": "/capital",
+                        "icon": "icon-speedometer"
+                    }';
         }
         $json = '{
                     "app": {
@@ -203,7 +184,18 @@ class UserService extends Service
                         "avatar": "./assets/img/zorro.svg",
                         "email": "cipchk@qq.com"
                     },
-                    "menu": '.$menu.'
+                    "menu": [
+                        {
+                            "text": "",
+                            "hideInBreadcrumb": true,
+                            "translate": "",
+                            "reuse": false,
+                            "group": false,
+                            "children": [
+                                '.$menu.'
+                            ]
+                        }
+                    ]
                 }';
         return json_decode($json, 1);
     }
