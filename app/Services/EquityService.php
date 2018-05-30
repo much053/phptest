@@ -24,6 +24,12 @@ use Phalcon\Mvc\Model\Query\Builder;
  */
 class EquityService extends Service
 {
+    /**
+     * 获取权益列表
+     * @param $struct
+     * @return mixed
+     * @throws Error
+     */
     public function getList($struct)
     {
         $url = $this->config->path('host.equity_host').'/equity/paging';
@@ -53,6 +59,12 @@ class EquityService extends Service
         return $data['data'];
     }
 
+    /**
+     * 通过权益订单号获取权益信息
+     * @param $equityNo
+     * @return mixed
+     * @throws Error
+     */
     public function getDetailByEquityNo($equityNo)
     {
         $url = $this->config->path('host.equity_host').'/equity/detail';
