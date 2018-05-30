@@ -97,7 +97,7 @@ class EquityService extends Service
         $builder->columns('a.id as orderId,a.order_no as orderNo,show_amount as totalAmount,a.created_at as createdAt,partner_name as partnerName,shop_id as isOnline,service_name as serviceName');
         $builder->where("account_id = ".$struct->equityId.' and a.status = '.UgOrderRecords::ORDER_PASSED);
         $builder->from(["a" => "App\\Models\\UgOrderRecords"]);
-        $builder->join('App\\Models\\UgOrderClaims', 'c.order_no = a.order_no', 'c');
+        $builder->join('App\\Models\\UgOrderClaims', 'c.order_no = a.order_no', 'c', 'left');
         $builder->orderBy('a.id desc');
 
         $records = $this->withQueryPaging($builder, $struct->page, $struct->limit);
