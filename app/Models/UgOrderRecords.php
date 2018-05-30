@@ -60,10 +60,19 @@ class UgOrderRecords extends BaseModel
 
         $this->hasOne(
             'order_no',
-            __NAMESPACE__.'\\UgOrderUdcard',
+            __NAMESPACE__.'\\UgOrderClaims',
             'order_no',
             [
-                'alias' => 'orderCard'
+                'alias' => 'orderClaim'
+            ]
+        );
+
+        $this->hasOne(
+            'order_no',
+            __NAMESPACE__.'\\UgShopCartRecords',
+            'order_no',
+            [
+                'alias' => 'shopOrder'
             ]
         );
 

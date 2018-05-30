@@ -82,6 +82,8 @@ class OrderService extends Service
     {
         $order = UgOrderRecords::findFirst($orderId);
 
+        $equity = $this->equityService->getDetailByEquityId($order->orderClaim->account_id);
+
         $return = [
             'orderId' => $order->id,
             'orderNo' => $order->order_no,
@@ -100,7 +102,16 @@ class OrderService extends Service
             'storeName' => $order->store_name,
             'assistantName' => $order->assistant_name,
             'assistantMobile' => $order->assistantMobile,
-            'items' => $this->getItems($order)
+            'equityNo' => $equity->equityNo,
+            'items' => $this->getItems($order),
+            'onlineDetail' => [
+                'waterNo' => $order->shopOrder->water_no,
+                'comment' => $order->shopOrder->comment,
+                'statusText' => $order->shopOrder->getStatusText(),
+                'consigne' => $order->shopOrder->consigne,
+                'consigneAddress' => $order->shopOrder->consigne_address,
+                'consigneMobile' => $order->shopOrder->consigne_mobile,
+            ]
         ];
 
         return $return;

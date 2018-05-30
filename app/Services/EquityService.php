@@ -87,6 +87,33 @@ class EquityService extends Service
     }
 
     /**
+     * 通过权益ID获取权益信息
+     * @param $equityId
+     * @return mixed
+     * @throws Error
+     */
+    public function getDetailByEquityId($equityId)
+    {
+        $url = $this->config->path('host.equity_host').'/equity/detail';
+
+        $options = [
+            'json' => [
+                'equityId' => $equityId
+            ]
+        ];
+
+        try {
+            $res = $this->httpClient->post($url, $options);
+        } catch (\Exception $e) {
+            throw new Error(Code::FAILURE_CREATE, "网络繁忙，请稍后重试");
+        }
+
+        $data = json_decode($res->getBody()->__toString());
+
+        return $data->data;
+    }
+
+    /**
      * 获取权益消费记录
      * @param RecordResult $struct
      * @return \stdClass
