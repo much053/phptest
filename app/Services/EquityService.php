@@ -43,7 +43,7 @@ class EquityService extends Service
         }
 
         try {
-            $res = $this->httpClient->post($url);
+            $res = $this->httpClient->post($url, ['json' => $option]);
         } catch (\Exception $e) {
             throw new Error(Code::FAILURE_CREATE, "网络繁忙，请稍后重试");
         }
