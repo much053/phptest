@@ -8,9 +8,8 @@
 
 namespace App\Services;
 
-use App\Models\UgOrderRecords;
 use App\Services\Abstracts\Service;
-use App\Structs\Requests\Order\ListStruct;
+use App\Structs\Requests\Pool\ListStruct;
 use Phalcon\Mvc\Model\Query\Builder;
 
 /**
@@ -21,9 +20,12 @@ use Phalcon\Mvc\Model\Query\Builder;
 class PoolService extends Service
 {
 
-    public function getList()
+    public function getList($struct)
     {
-        $pools = new Builder;
-        $pools->from(['a' => 'App\\Models\\Po']);
+        $builder = new Builder;
+        $builder->from(['a' => 'App\\Models\\PoolRecords']);
+        $builder->orderBy('id desc');
+        $pools = $this->withQueryPaging($builder, $struct->page, $struct->limit);
+        return $pools;
     }
 }

@@ -30,7 +30,7 @@ class EquityService extends Service
 
         if ($struct->mobile) {
             $member = $this->serviceSdk->user->getMemberInfo(['mobile' => $struct->mobile])->getData();
-            $option['memberId'] = $member->memberId;
+            $option['memberId'] = $member->memberId?:0;
         }
 
         if ($struct->equityNo) {

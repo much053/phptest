@@ -6,7 +6,7 @@
  * Date: 2018/5/3
  * Time: 下午4:46
  */
-namespace App\Structs\Requests\Order;
+namespace App\Structs\Requests\Pool;
 
 use Uniondrug\Structs\PagingRequest;
 use Uniondrug\Structs\Struct;
@@ -17,32 +17,25 @@ use Uniondrug\Structs\Struct;
 class ListStruct extends PagingRequest
 {
     /**
-     * 订单号
-     * @var string
-     * @Validator(type=string)
-     */
-    public $orderNo;
-
-    /**
-     * 权益卡号
-     * @var string
-     * @Validator(type=string)
-     */
-    public $equityNo;
-
-    /**
-     * 手机号
-     * @var string
-     * @Validator(type=string)
-     */
-    public $mobile;
-
-    /**
-     * 手机号类型
+     * 连锁ID
      * @var int
      * @Validator(type=int)
      */
-    public $mobileType;
+    public $partnerId;
+
+    /**
+     * 门店ID
+     * @var int
+     * @Validator(type=int)
+     */
+    public $storeId;
+
+    /**
+     * 门店ID
+     * @var int
+     * @Validator(type=int)
+     */
+    public $erpSn;
 
     /**
      * 开始时间
@@ -57,11 +50,4 @@ class ListStruct extends PagingRequest
      * @Validator(type=string)
      */
     public $endDate;
-
-    /**
-     * 是否是线上订单
-     * @var int
-     * @Validator(type=int)
-     */
-    public $isOnline;
 }

@@ -21,7 +21,9 @@ use App\Logics\Equity\RecordLogic;
 class EquityController extends Base
 {
     /**
+     * 获取权益列表
      * @Get('')
+     * @return \Phalcon\Http\Response
      */
     public function indexAction()
     {
@@ -33,7 +35,10 @@ class EquityController extends Base
     }
 
     /**
+     * 获取权益详情
      * @Get('/{id:([0-9]+)}/records')
+     * @param $id
+     * @return \Phalcon\Http\Response
      */
     public function recordAction($id)
     {
