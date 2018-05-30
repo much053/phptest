@@ -202,7 +202,7 @@ class CommunicateService extends Service
         }
 
         if ($struct->endDate) {
-            $cond[] = "gmtCreated <= '".$struct->endDate."'";
+            $cond[] = "gmtCreated <= '".$struct->endDate." 23:59:59'";
         }
 
         return $cond;
