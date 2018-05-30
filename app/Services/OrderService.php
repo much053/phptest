@@ -111,6 +111,8 @@ class OrderService extends Service
                 'consigne' => $order->shopOrder->consigne,
                 'consigneAddress' => $order->shopOrder->consigne_address,
                 'consigneMobile' => $order->shopOrder->consigne_mobile,
+                'expressNo' => $order->shopOrder->express->express_no,
+                'expressCompany' => $order->shopOrder->express->express_company
             ]
         ];
 
