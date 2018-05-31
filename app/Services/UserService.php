@@ -145,12 +145,14 @@ class UserService extends Service
             $menu = '{
                         "text": "工作台",
                         "translate": "工作台",
+                        "reuse": false,
                         "link": "/workbench",
                         "icon": "icon-speedometer"
                     },
                     {
                         "text": "统计",
                         "translate": "统计",
+                        "reuse": false,
                         "link": "/statistics",
                         "icon": "icon-speedometer"
                     }';
@@ -158,18 +160,21 @@ class UserService extends Service
             $menu = '{
                         "text": "直付统计",
                         "translate": "直付统计",
+                        "reuse": false,
                         "link": "/direct",
                         "icon": "icon-speedometer"
                     },
                     {
                         "text": "增值服务统计",
                         "translate": "增值服务统计",
+                        "reuse": false,
                         "link": "/appreciate",
                         "icon": "icon-speedometer"
                     },
                     {
                         "text": "资金池变动记录",
                         "translate": "资金池变动记录",
+                        "reuse": false,
                         "link": "/capital",
                         "icon": "icon-speedometer"
                     }';
@@ -189,7 +194,6 @@ class UserService extends Service
                             "text": "",
                             "hideInBreadcrumb": true,
                             "translate": "",
-                            "reuse": false,
                             "group": false,
                             "children": [
                                 '.$menu.'
