@@ -153,12 +153,6 @@ class UserService extends Service
                         "translate": "统计",
                         "link": "/statistics",
                         "icon": "icon-speedometer"
-                    },
-                    {
-                        "text": "添加沟通记录",
-                        "translate": "添加沟通记录",
-                        "link": "/communicate/add",
-                        "icon": "icon-plus"
                     }';
         } else {
             $menu = '{
