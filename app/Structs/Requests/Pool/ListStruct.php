@@ -31,7 +31,7 @@ class ListStruct extends PagingRequest
     public $storeId;
 
     /**
-     * 门店ID
+     * ERP流水号
      * @var int
      * @Validator(type=int)
      */

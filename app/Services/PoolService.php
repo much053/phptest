@@ -20,10 +20,11 @@ use Phalcon\Mvc\Model\Query\Builder;
 class PoolService extends Service
 {
 
-    public function getList($struct)
+    public function getList(ListStruct $struct)
     {
         $builder = new Builder;
         $builder->from(['a' => 'App\\Models\\PoolRecords']);
+        $builder->join("App\\Models\\UgOrderRecords", "r.order_no = a.order_no", "r", "left");
         $builder->orderBy('id desc');
         $pools = $this->withQueryPaging($builder, $struct->page, $struct->limit);
         return $pools;

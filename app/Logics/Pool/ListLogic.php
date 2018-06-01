@@ -21,7 +21,7 @@ class ListLogic extends Logic
         $struct = ListStruct::factory($payload);
 
         //获取订单详情
-        $orders = $this->orderService->getList($struct);
+        $orders = $this->poolService->getList($struct);
 
         return ListResult::factory($orders);
     }

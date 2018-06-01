@@ -22,7 +22,7 @@ return [
             'port'     => '3712',
             'username' => 'develop',
             'password' => 'develop123',
-            'dbname'   => 'cn_devocet_module_agent',
+            'dbname'   => 'cn_turboradio_backend_dev_agent',
             'charset'  => 'utf8',
         ]
     ],
@@ -42,7 +42,7 @@ return [
             'port'     => '3712',
             'username' => 'develop',
             'password' => 'develop123',
-            'dbname'   => 'cn_devocet_module_agent',
+            'dbname'   => 'cn_turboradio_backend_dev_agent',
             'charset'  => 'utf8',
         ]
     ],
@@ -62,7 +62,7 @@ return [
             'port' => '3306',
             'username' => 'uniondrug',
             'password' => 'juyin@2017',
-            'dbname' => 'uniondrug_member',
+            'dbname' => 'cn_uniondrug_backend_agent',
             'charset' => 'utf8',
         ]
     ]
