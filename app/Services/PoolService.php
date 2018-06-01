@@ -27,7 +27,7 @@ class PoolService extends Service
         $builder->from(['a' => 'App\\Models\\PoolRecords']);
         $builder->join("App\\Models\\UgOrderRecords", "r.order_no = a.order_no", "r", "left");
         $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e", "left");
-        $builder->orderBy('id desc');
+        $builder->orderBy('a.id desc');
         $pools = $this->withQueryPaging($builder, $struct->page, $struct->limit);
         return $pools;
     }
