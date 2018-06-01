@@ -12,4 +12,4 @@
 tmp/*
 /nbproject/private/
 /public/.htaccess
-/log/
+/log

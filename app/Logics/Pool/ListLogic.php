@@ -8,8 +8,8 @@
 namespace App\Logics\Pool;
 
 use App\Logics\Abstracts\Logic;
-use App\Structs\Results\Order\ListResult;
-use App\Structs\Requests\Order\ListStruct;
+use App\Structs\Results\Pool\ListResult;
+use App\Structs\Requests\Pool\ListStruct;
 
 class ListLogic extends Logic
 {
@@ -20,9 +20,14 @@ class ListLogic extends Logic
     {
         $struct = ListStruct::factory($payload);
 
-        //获取订单详情
-        $orders = $this->poolService->getList($struct);
+        //获取资金池列表
+        $pools = $this->poolService->getList($struct);
 
-        return ListResult::factory($orders);
+        $statistic = $this->poolService->getStatistic($struct);
+
+        $result = ListResult::factory($pools);
+        $result->with(['statistic' => $statistic]);
+
+        return $result;
     }
 }

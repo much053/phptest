@@ -3,7 +3,7 @@
  * @author wsfuyibing <websearch@163.com>
  * @date 2018-03-19
  */
-namespace App\Structs\Results\Order;
+namespace App\Structs\Results\Pool;
 
 use App\Structs\Traits\ExampleTrait;
 use Uniondrug\Structs\Struct;
@@ -14,9 +14,9 @@ use Uniondrug\Structs\Struct;
 class Row extends Struct
 {
     /**
-     * @var string
+     * @var int
      */
-    public $orderId;
+    public $id;
 
     /**
      * @var string
@@ -31,7 +31,12 @@ class Row extends Struct
     /**
      * @var string
      */
-    public $totalAmount;
+    public $partnerName;
+
+    /**
+     * @var string
+     */
+    public $storeName;
 
     /**
      * @var string
@@ -41,10 +46,5 @@ class Row extends Struct
     /**
      * @var string
      */
-    public $partnerName;
-
-    /**
-     * @var string
-     */
-    public $isOnline;
+    public $erpSn;
 }
