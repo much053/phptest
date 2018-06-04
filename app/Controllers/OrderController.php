@@ -41,4 +41,14 @@ class OrderController extends Base
 
         return $this->serviceServer->withData($logic);
     }
+
+    /**
+     * @Get('/{id:([0-9]+)}/pools')
+     */
+    public function poolAction($id)
+    {
+        $logic = PoolLogic::factory($id);
+
+        return $this->serviceServer->withData($logic);
+    }
 }

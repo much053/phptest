@@ -76,21 +76,21 @@ class UgOrderRecords extends BaseModel
             ]
         );
 
-        $this->hasOne(
-            'member_id',
-            __NAMESPACE__.'\\WxMembers',
-            'id',
-            [
-                'alias' => 'member'
-            ]
-        );
-
         $this->hasMany(
             'order_no',
             __NAMESPACE__.'\\UgOrderItems',
             'order_no',
             [
                 'alias' => 'items'
+            ]
+        );
+
+        $this->hasMany(
+            'order_no',
+            __NAMESPACE__.'\\PoolRecords',
+            'order_no',
+            [
+                'alias' => 'pools'
             ]
         );
     }

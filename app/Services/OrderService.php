@@ -113,7 +113,8 @@ class OrderService extends Service
                 'consigneMobile' => $order->shopOrder->consigne_mobile,
                 'expressNo' => $order->shopOrder->express->express_no,
                 'expressCompany' => $order->shopOrder->express->express_company
-            ]
+            ],
+            'poolRecords' => $this->getPoolRecords($order)
         ];
 
         return $return;
@@ -160,5 +161,26 @@ class OrderService extends Service
         }
 
         return array_values($data);
+    }
+
+    public function getPoolRecords(UgOrderRecords $order)
+    {
+        $pools = $order->pools;
+
+        $data = [];
+        if (count($pools)) {
+            foreach ($pools as $pool) {
+                $data[] = [
+                    'id' => $pool->id,
+                    'orderNo' => $pool->order_no,
+                    'originAmount' => $pool->origin_fund,
+                    'incomeAmount' => $pool->type != 1?$pool->op_fund:'0.00',
+                    'expendAmount' => $pool->type == 1?$pool->op_fund:'0.00',
+                    'finalAmount' => $pool->final_fund
+                ];
+            }
+        }
+
+        return $data;
     }
 }

@@ -5,11 +5,11 @@
  * Date: 2018/5/3
  * Time: 下午3:14
  */
-namespace App\Logics\Pool;
+namespace App\Logics\Order;
 
 use App\Logics\Abstracts\Logic;
 
-class DetailLogic extends Logic
+class PoolLogic extends Logic
 {
     /**
      * @inheritdoc
@@ -17,8 +17,8 @@ class DetailLogic extends Logic
     function run($payload)
     {
         //获取订单详情
-        $pool = $this->poolService->detail($payload);
+        $order = $this->orderService->getPoolRecords($payload);
 
-        return $pool;
+        return $order;
     }
 }

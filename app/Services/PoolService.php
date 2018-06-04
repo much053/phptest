@@ -8,6 +8,7 @@
 
 namespace App\Services;
 
+use App\Models\PoolRecords;
 use App\Services\Abstracts\Service;
 use App\Structs\Requests\Pool\ListStruct;
 use Phalcon\Mvc\Model\Query\Builder;
@@ -23,13 +24,31 @@ class PoolService extends Service
     public function getList(ListStruct $struct)
     {
         $builder = new Builder;
-        $builder->columns("a.id,a.order_no as orderNo,partner_name as partnerName,store_name as storeName,erp_sn as erpSn,a.create_time as createdAt,type");
-        $builder->from(['a' => 'App\\Models\\PoolRecords']);
-        $builder->join("App\\Models\\UgOrderRecords", "r.order_no = a.order_no", "r", "left");
-        $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e", "left");
-        $builder->orderBy('a.id desc');
+        $builder->from('App\\Models\\PoolRecords');
+        $builder->orderBy('id desc');
         $pools = $this->withQueryPaging($builder, $struct->page, $struct->limit);
         return $pools;
+    }
+
+    public function detail($id)
+    {
+        $pool = PoolRecords::findFirst($id);
+
+        return [
+            'id' => $pool->id,
+            'orderNo' => $pool->order_no,
+            'serviceName' => $pool->order->service_name,
+            'erpSn' => $pool->erp->erp_sn,
+            'partnerName' => $pool->order->partner_name,
+            'storeName' => $pool->order->store_name,
+            'createdAt' => $pool->create_time,
+            'typeText' => $pool->getTypeText(),
+            'comment' => $pool->comment,
+            'originAmount' => $pool->origin_fund,
+            'incomeAmount' => $pool->type != 1?$pool->op_fund:'0.00',
+            'expendAmount' => $pool->type == 1?$pool->op_fund:'0.00',
+            'finalAmount' => $pool->final_fund
+        ];
     }
 
 

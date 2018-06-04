@@ -6,7 +6,7 @@
  * Date: 2018/5/3
  * Time: 下午4:46
  */
-namespace App\Structs\Requests\Workbench;
+namespace App\Structs\Requests\Pool;
 
 use Uniondrug\Structs\Struct;
 

@@ -5,6 +5,7 @@
  */
 namespace App\Structs\Results\Pool;
 
+use App\Models\UgOrderErps;
 use App\Structs\Traits\ExampleTrait;
 use Uniondrug\Structs\Struct;
 
@@ -20,31 +21,36 @@ class Row extends Struct
 
     /**
      * @var string
+     * @alias order_no
      */
     public $orderNo;
 
     /**
      * @var string
+     * @alias create_time
      */
     public $createdAt;
 
     /**
      * @var string
+     * @alias partner_name
      */
     public $partnerName;
 
     /**
      * @var string
+     * @alias store_name
      */
     public $storeName;
 
     /**
      * @var string
      */
-    public $serviceName;
+    public $typeText;
 
     /**
      * @var string
+     * @alias erp_sn
      */
     public $erpSn;
 }
