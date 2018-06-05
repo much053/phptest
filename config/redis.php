@@ -17,9 +17,9 @@ return [
     'default' => [
         'options' => [
             'prefix'     => '_SKETCH_',
-            'host'       => '127.0.0.1',
+            'host'       => '192.168.3.193',
             'port'       => 6379,
-            'auth'       => '',
+            'auth'       => 'uniondrug@123',
             'persistent' => false,
             'index'      => 0,
         ],
