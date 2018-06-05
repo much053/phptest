@@ -24,7 +24,7 @@ return [
             'index'      => 0,
         ],
     ],
-    'testing' => [
+    'production' => [
         'options' => [
             'prefix'     => '_SKETCH_',
             'host'       => 'r-bp1bce11bbd535a4.redis.rds.aliyuncs.com',
