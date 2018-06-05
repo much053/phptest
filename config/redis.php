@@ -16,7 +16,7 @@
 return [
     'default' => [
         'options' => [
-            'prefix'     => '_SKETCH_',
+            'prefix'     => '_AGENT_BACKEND_',
             'host'       => '192.168.3.193',
             'port'       => 6379,
             'auth'       => 'uniondrug@123',
@@ -26,7 +26,7 @@ return [
     ],
     'production' => [
         'options' => [
-            'prefix'     => '_SKETCH_',
+            'prefix'     => '_AGENT_BACKEND_',
             'host'       => 'r-bp1bce11bbd535a4.redis.rds.aliyuncs.com',
             'port'       => 6379,
             'auth'       => 'Juyin2017',

@@ -52,6 +52,6 @@ return [
         'erp_host'      => 'http://erp.uniondrug.cn',
         'rights_host'   => 'http://rights.service.uniondrug.cn',
         'partner_host'  => 'http://common.uniondrug.cn',
-        'equity_host'   => 'http://equity.module.dev.turboradio.cn/'
+        'equity_host'   => 'http://equity.module.uniondrug.cn/'
     ]
 ];

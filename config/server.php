@@ -14,7 +14,7 @@
 
 return [
     'default'     => [
-        'host'       => 'http://0.0.0.0:8087',
+        'host'       => 'http://0.0.0.0:8202',
         'class'      => \Uniondrug\Server\Servitization\Server\HTTPServer::class,
         'options'    => [
             'pid_file'        => __DIR__ . '/../tmp/pid/server.pid',
@@ -32,7 +32,7 @@ return [
         'listeners'  => [
             [
                 'class' => \Uniondrug\Server\Servitization\Server\ManagerServer::class,
-                'host'  => 'tcp://0.0.0.0:7087',
+                'host'  => 'tcp://0.0.0.0:7202',
             ],
             /**
              * TCP方式服务调用
@@ -43,14 +43,8 @@ return [
 //            ],
         ],
     ],
-    'development' => [
-        'autoreload' => true,
-        'processes'  => [
-            \Uniondrug\Server\Processes\ReloadProcess::class,
-        ],
-    ],
     'production'  => [
-        'host'      => 'http://10.46.231.5:8087',
+        'host'      => 'http://10.81.181.116:8202',
         'options'   => [
             'worker_num'      => 8,
             'task_worker_num' => 8,
@@ -58,7 +52,7 @@ return [
         'listeners' => [
             [
                 'class' => \Uniondrug\Server\Servitization\Server\ManagerServer::class,
-                'host'  => 'tcp://10.46.231.5:7087',
+                'host'  => 'tcp://10.81.181.116:7202',
             ],
         ],
     ],
