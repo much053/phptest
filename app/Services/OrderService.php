@@ -25,7 +25,7 @@ class OrderService extends Service
      * @param ListStruct $struct
      * @return \stdClass
      */
-    public function getList(ListStruct $struct)
+    public function getPaging(ListStruct $struct)
     {
         $builder = new Builder();
         $builder->columns('a.id as orderId,a.order_no as orderNo,show_amount as totalAmount,a.created_at as createdAt,partner_name as partnerName,store_name as storeName,assistant_name as assistantName,shop_id as isOnline,service_name as serviceName,sale_amount as saleAmount,checked_at as checkedAt,a.status,e.erp_sn as erpSn,e.erp_img as erpImg');
@@ -182,5 +182,98 @@ class OrderService extends Service
         }
 
         return $data;
+    }
+
+    public function getList(ListStruct $struct)
+    {
+        $builder = new Builder();
+        $builder->columns('a.id as orderId,a.order_no as orderNo,show_amount as totalAmount,a.created_at as createdAt,partner_name as partnerName,store_name as storeName,assistant_name as assistantName,shop_id as isOnline,service_name as serviceName,sale_amount as saleAmount,checked_at as checkedAt,a.status,e.erp_sn as erpSn,e.erp_img as erpImg');
+        $builder->from(["a" => "App\\Models\\UgOrderRecords"]);
+        $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e", "left");
+        $builder->orderBy('a.id desc');
+
+        if ($struct->orderNo) {
+            $builder->where("a.order_no = '".$struct->orderNo."'");
+        }
+
+        if ($struct->isDirect != '') {
+            $builder->andWhere("is_direct = '".$struct->isDirect."'");
+        }
+
+        if ($struct->mobile) {
+            $builder->andWhere("member_mobile = '".$struct->mobile."'");
+        }
+
+        if ($struct->equityNo) {
+            $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
+            if ($equity->id) {
+                $builder->andWhere("account_id = ".$equity->id);
+                $builder->join("App\\Models\\UgOrderClaims", "c.order_no = a.order_no", "c", "left");
+            }
+        }
+
+        if ($struct->partnerId) {
+            $builder->andWhere("partner_id = ".$struct->partnerId);
+        }
+
+        if ($struct->storeId) {
+            $builder->andWhere("store_id = ".$struct->storeId);
+        }
+
+        if ($struct->erpSn) {
+            $builder->andWhere("erp_sn = '".$struct->erpSn."'");
+        }
+
+        if ($struct->productId) {
+            $builder->andWhere("service_id = '".$struct->productId."'");
+        }
+    }
+
+    /**
+     * 导出excel
+     * @param ListStruct $struct
+     */
+    public function excelExport(ListStruct $struct)
+    {
+        $orders = $this->getList($struct);
+
+        if (count($orders)) {
+            $objPHPExcel = new \PHPExcel();                     //实例化一个PHPExcel()对象
+            $objSheet = $objPHPExcel->getActiveSheet();        //选取当前的sheet对象
+            $objSheet->setTitle('订单');                      //对当前sheet对象命名
+            $objSheet->setCellValue('A1', '药联订单号');
+            $objSheet->setCellValue('B1', 'ERP销售单号');
+            $objSheet->setCellValue('C1', '连锁名称');
+            $objSheet->setCellValue('D1', '门店名称');
+            $objSheet->setCellValue('E1', '产品名称');
+            $objSheet->setCellValue('F1', '药联订单创建时间');
+            $objSheet->setCellValue('G1', 'ERP销售时间');
+            $objSheet->setCellValue('H1', '审核时间');
+            $objSheet->setCellValue('I1', '审核状态');
+            $objSheet->setCellValue('J1', '资金池扣款状态');
+            $k = 2;
+            foreach ($orders as $order) {
+                $objSheet->setCellValue('A'.$k, $order->orderNo);
+                $objSheet->setCellValue('B'.$k, $order->erpSn);
+                $objSheet->setCellValue('C'.$k, $order->partnerName);
+                $objSheet->setCellValue('D'.$k, $order->storeName);
+                $objSheet->setCellValue('E'.$k, $order->serviceName);
+                $objSheet->setCellValue('F'.$k, $order->createdAt);
+                $objSheet->setCellValue('G'.$k, $order->checkedAt);
+                $objSheet->setCellValue('H'.$k, $order->statusText);
+                $objSheet->setCellValue('I'.$k, $order->status == 2 && $order->pools?'已扣除':'未扣除');
+                $k++;
+            }
+
+            $write = new \PHPExcel_Writer_Excel5($objPHPExcel);
+            header("Cache-Control:must-revalidate, post-check=0, pre-check=0");
+            header("Content-Type:application/force-download");
+            header("Content-Type:application/vnd.ms-execl");
+            header("Content-Type:application/octet-stream");
+            header("Content-Type:application/download");;
+            header('Content-Disposition:attachment;filename="'.time().'.xls"');
+            header("Content-Transfer-Encoding:binary");
+            $write->save('php://output');
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace App\Controllers;
 
 use App\Controllers\Abstracts\Base;
 use App\Logics\Order\DetailLogic;
+use App\Logics\Order\ExcelLogic;
 use App\Logics\Order\ListLogic;
 
 /**
@@ -43,12 +44,12 @@ class OrderController extends Base
     }
 
     /**
-     * @Get('/{id:([0-9]+)}/pools')
+     *
      */
-    public function poolAction($id)
+    public function excelAction()
     {
-        $logic = PoolLogic::factory($id);
+        $input = $this->request->getQuery();
 
-        return $this->serviceServer->withData($logic);
+        ExcelLogic::factory($input);
     }
 }

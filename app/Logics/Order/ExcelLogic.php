@@ -8,8 +8,9 @@
 namespace App\Logics\Order;
 
 use App\Logics\Abstracts\Logic;
+use App\Structs\Requests\Order\ListStruct;
 
-class PoolLogic extends Logic
+class ExcelLogic extends Logic
 {
     /**
      * @inheritdoc
@@ -17,8 +18,8 @@ class PoolLogic extends Logic
     function run($payload)
     {
         //获取订单详情
-        $order = $this->orderService->getPoolRecords($payload);
+        $struct = ListStruct::factory($payload);
 
-        return $order;
+        $this->orderService->excelExport($struct);
     }
 }

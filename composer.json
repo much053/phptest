@@ -24,7 +24,8 @@
     "uniondrug/trace": "^2.0",
     "uniondrug/validation": "^2.0",
     "uniondrug/token-auth-middleware": "^1.0",
-    "uniondrug/redis": "^2.0"
+    "uniondrug/redis": "^2.0",
+    "phpoffice/phpexcel": "1.8.1"
   },
   "autoload": {
     "psr-4": {
