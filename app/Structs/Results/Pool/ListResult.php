@@ -8,6 +8,7 @@
  */
 namespace App\Structs\Results\Pool;
 
+use App\Structs\Requests\Pool\StatisticResult;
 use App\Structs\Results\Example\Row;
 use Uniondrug\Structs\PaginatorStruct;
 

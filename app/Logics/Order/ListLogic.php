@@ -23,6 +23,11 @@ class ListLogic extends Logic
         //获取订单详情
         $orders = $this->orderService->getPaging($struct);
 
+        $statistic = $this->orderService->getStatistic($struct);
+
+        $result = ListResult::factory($orders);
+        $result->with(['statistic' => $statistic]);
+
         return ListResult::factory($orders);
     }
 }

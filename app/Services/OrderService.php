@@ -276,4 +276,14 @@ class OrderService extends Service
             $write->save('php://output');
         }
     }
+
+    public function getStatistic(ListStruct $struct)
+    {
+        return [
+            'orderCount' => '45',
+            'totalAmount' => '2000',
+            'freeAmount' => '1000',
+            'saleAmount' => '1000'
+        ];
+    }
 }
