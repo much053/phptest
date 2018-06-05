@@ -8,10 +8,10 @@
 return [
     'default'    => [
         'timeout' => 30,
-        'service' => 'http://47.97.74.244:8082',
+        'service' => 'http://ns.module.test.turboradio.cn:8082',
     ],
     'production' => [
         'timeout' => 30,
-        'service' => 'http://10.46.231.5:8082',
+        'service' => 'http://ns.module.uniondrug.cn:8082',
     ],
 ];
