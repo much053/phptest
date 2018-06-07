@@ -232,7 +232,7 @@ class OrderService extends Service
     public function getStatistic(ListStruct $struct)
     {
         $builder = new Builder();
-        $builder->columns('count(*) as orderCount,sum(show_amount) as totalAmount,sum(free_amount) as freeAmount,sum(sale_amount) as saleAmount');
+        $builder->columns('count(*) as totalCount,sum(show_amount) as totalAmount,sum(free_amount) as freeAmount,sum(sale_amount) as saleAmount');
         $builder->from(["a" => "App\\Models\\UgOrderRecords"]);
         $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e", "left");
         $builder->orderBy('a.id desc');
