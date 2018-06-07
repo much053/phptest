@@ -8,11 +8,11 @@
  */
 return [
     'default' => [
-        'service' => 'http://ns.module.dev.turboradio.cn',
+        'service' => 'http://ns.module.test.turboradio.cn:8082',
         'timeout' => 30,
     ],
     'testing'=>[
-        'service' => 'http://ns.module.test.turboradio.cn',
+        'service' => 'http://ns.module.test.turboradio.cn:8082',
     ],
     'production'=>[
         'service' => 'http://ns.module.uniondrug.cn',

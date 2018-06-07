@@ -9,6 +9,7 @@
 namespace App\Services;
 
 use App\Models\PoolRecords;
+use App\Models\UgOrderErps;
 use App\Services\Abstracts\Service;
 use App\Structs\Requests\Pool\ListStruct;
 use Phalcon\Mvc\Model\Query\Builder;
@@ -26,6 +27,7 @@ class PoolService extends Service
         $builder = new Builder;
         $builder->from('App\\Models\\PoolRecords');
         $builder->orderBy('id desc');
+        $builder = $this->_get_cond($builder, $struct);
         $pools = $this->withQueryPaging($builder, $struct->page, $struct->limit);
         return $pools;
     }
@@ -54,6 +56,7 @@ class PoolService extends Service
 
     public function getStatistic(ListStruct $struct)
     {
+
         $return = [
             'totalCount' => '45',
             'incomeCount' => '1',
@@ -65,5 +68,31 @@ class PoolService extends Service
         ];
 
         return $return;
+    }
+
+    private function _get_cond($builder, $struct)
+    {
+        if ($struct->partnerId) {
+            $builder->where("partner_id = ".$struct->partnerId);
+        }
+
+        if ($struct->type != '') {
+            $builder->andWhere("type = ".$struct->type);
+        }
+
+        if ($struct->startDate) {
+            $builder->andWhere("create_time >= '".$struct->startDate."'");
+        }
+
+        if ($struct->endDate) {
+            $builder->andWhere("create_time <= '".$struct->endDate."'");
+        }
+
+        if ($struct->erpSn) {
+            $erp = UgOrderErps::findFirstByErpSn($struct->erpSn);
+            $builder->andWhere("order_no = '".$erp->order_no."'");
+        }
+
+        return $builder;
     }
 }

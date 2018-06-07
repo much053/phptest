@@ -33,41 +33,7 @@ class OrderService extends Service
         $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e", "left");
         $builder->orderBy('a.id desc');
 
-        if ($struct->orderNo) {
-            $builder->where("a.order_no = '".$struct->orderNo."'");
-        }
-
-        if ($struct->isDirect != '') {
-            $builder->andWhere("is_direct = '".$struct->isDirect."'");
-        }
-
-        if ($struct->mobile) {
-            $builder->andWhere("member_mobile = '".$struct->mobile."'");
-        }
-
-        if ($struct->equityNo) {
-            $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
-            if ($equity->id) {
-                $builder->andWhere("account_id = ".$equity->id);
-                $builder->join("App\\Models\\UgOrderClaims", "c.order_no = a.order_no", "c", "left");
-            }
-        }
-
-        if ($struct->partnerId) {
-            $builder->andWhere("partner_id = ".$struct->partnerId);
-        }
-
-        if ($struct->storeId) {
-            $builder->andWhere("store_id = ".$struct->storeId);
-        }
-
-        if ($struct->erpSn) {
-            $builder->andWhere("erp_sn = '".$struct->erpSn."'");
-        }
-
-        if ($struct->productId) {
-            $builder->andWhere("service_id = '".$struct->productId."'");
-        }
+        $builder = $this->_get_cond($builder, $struct);
 
         $orders = $this->withQueryPaging($builder, $struct->page, $struct->limit);
         return $orders;
@@ -192,41 +158,9 @@ class OrderService extends Service
         $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e", "left");
         $builder->orderBy('a.id desc');
 
-        if ($struct->orderNo) {
-            $builder->where("a.order_no = '".$struct->orderNo."'");
-        }
+        $builder = $this->_get_cond($builder, $struct);
 
-        if ($struct->isDirect != '') {
-            $builder->andWhere("is_direct = '".$struct->isDirect."'");
-        }
-
-        if ($struct->mobile) {
-            $builder->andWhere("member_mobile = '".$struct->mobile."'");
-        }
-
-        if ($struct->equityNo) {
-            $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
-            if ($equity->id) {
-                $builder->andWhere("account_id = ".$equity->id);
-                $builder->join("App\\Models\\UgOrderClaims", "c.order_no = a.order_no", "c", "left");
-            }
-        }
-
-        if ($struct->partnerId) {
-            $builder->andWhere("partner_id = ".$struct->partnerId);
-        }
-
-        if ($struct->storeId) {
-            $builder->andWhere("store_id = ".$struct->storeId);
-        }
-
-        if ($struct->erpSn) {
-            $builder->andWhere("erp_sn = '".$struct->erpSn."'");
-        }
-
-        if ($struct->productId) {
-            $builder->andWhere("service_id = '".$struct->productId."'");
-        }
+        return $this->withQueryList($builder);
     }
 
     /**
@@ -279,11 +213,55 @@ class OrderService extends Service
 
     public function getStatistic(ListStruct $struct)
     {
-        return [
-            'orderCount' => '45',
-            'totalAmount' => '2000',
-            'freeAmount' => '1000',
-            'saleAmount' => '1000'
-        ];
+        $builder = new Builder();
+        $builder->columns('count(*) as orderCount,sum(show_amount) as totalAmount,sum(free_amount) as freeAmount,sum(sale_amount) as saleAmount');
+        $builder->from(["a" => "App\\Models\\UgOrderRecords"]);
+        $builder->join("App\\Models\\UgOrderErps", "e.order_no = a.order_no", "e", "left");
+        $builder->orderBy('a.id desc');
+
+        $builder = $this->_get_cond($builder, $struct);
+
+        return $this->withQueryFirst($builder);
+    }
+
+    private function _get_cond($builder, $struct)
+    {
+        if ($struct->orderNo) {
+            $builder->where("a.order_no = '".$struct->orderNo."'");
+        }
+
+        if ($struct->isDirect != '') {
+            $builder->andWhere("is_direct = '".$struct->isDirect."'");
+        }
+
+        if ($struct->mobile) {
+            $builder->andWhere("member_mobile = '".$struct->mobile."'");
+        }
+
+        if ($struct->equityNo) {
+            $equity = $this->equityService->getDetailByEquityNo($struct->equityNo);
+            if ($equity->id) {
+                $builder->andWhere("account_id = ".$equity->id);
+                $builder->join("App\\Models\\UgOrderClaims", "c.order_no = a.order_no", "c", "left");
+            }
+        }
+
+        if ($struct->partnerId) {
+            $builder->andWhere("partner_id = ".$struct->partnerId);
+        }
+
+        if ($struct->storeId) {
+            $builder->andWhere("store_id = ".$struct->storeId);
+        }
+
+        if ($struct->erpSn) {
+            $builder->andWhere("erp_sn = '".$struct->erpSn."'");
+        }
+
+        if ($struct->productId) {
+            $builder->andWhere("service_id = '".$struct->productId."'");
+        }
+
+        return $builder;
     }
 }
