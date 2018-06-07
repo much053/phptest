@@ -13,7 +13,7 @@ return [
             'port'     => '3712',
             'username' => 'develop',
             'password' => 'develop123',
-            'dbname'   => 'uniondrug_partner_rc',
+            'dbname'   => 'uniondrug_partner',
             'charset'  => 'utf8',
         ],
         "db2"  => [
@@ -33,7 +33,7 @@ return [
             'port'     => '3712',
             'username' => 'develop',
             'password' => 'develop123',
-            'dbname'   => 'uniondrug_partner_rc',
+            'dbname'   => 'uniondrug_partner',
             'charset'  => 'utf8',
         ],
         "db2"  => [
