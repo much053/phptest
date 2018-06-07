@@ -28,6 +28,6 @@ class ListLogic extends Logic
         $result = ListResult::factory($orders);
         $result->with(['statistic' => $statistic]);
 
-        return ListResult::factory($orders);
+        return $result;
     }
 }

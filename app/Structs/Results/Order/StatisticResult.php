@@ -6,7 +6,7 @@
  * Date: 2018/5/3
  * Time: 下午4:46
  */
-namespace App\Structs\Requests\Order;
+namespace App\Structs\Results\Order;
 
 use Uniondrug\Structs\Struct;
 
@@ -17,22 +17,22 @@ class StatisticResult extends Struct
 {
     /**
      * 所有数量
-     * @var int
-     * @Validator(type=int)
+     * @var string
+     * @Validator(type=string)
      */
     public $totalCount;
 
     /**
      * 收入笔数
-     * @var int
-     * @Validator(type=int)
+     * @var string
+     * @Validator(type=string)
      */
     public $totalAmount;
 
     /**
      * 支出笔数
-     * @var int
-     * @Validator(type=int)
+     * @var string
+     * @Validator(type=string)
      */
     public $freeAmount;
 

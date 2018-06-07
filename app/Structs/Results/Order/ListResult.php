@@ -8,8 +8,6 @@
  */
 namespace App\Structs\Results\Order;
 
-use App\Structs\Requests\Order\StatisticResult;
-use App\Structs\Results\Example\Row;
 use Uniondrug\Structs\PaginatorStruct;
 
 /**
@@ -18,13 +16,12 @@ use Uniondrug\Structs\PaginatorStruct;
 class ListResult extends PaginatorStruct
 {
     /**
-     * @var2 Row[]
      * @var \App\Structs\Results\Order\Row[]
      */
     public $body;
 
     /**
-     * @var StatisticResult
+     * @var \App\Structs\Results\Order\StatisticResult
      */
     public $statistic;
 }
