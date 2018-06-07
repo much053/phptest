@@ -17,8 +17,8 @@ class StatisticResult extends Struct
 {
     /**
      * 所有数量
-     * @var string
-     * @Validator(type=string)
+     * @var int
+     * @Validator(type=int)
      */
     public $totalCount;
 
