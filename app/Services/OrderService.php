@@ -69,6 +69,10 @@ class OrderService extends Service
             'assistantName' => $order->assistant_name,
             'assistantMobile' => $order->assistantMobile,
             'equityNo' => $equity->equityNo,
+            'settleDiscount' => $order->partner_discount,
+            'settleFreeAmount' => bcmul($order->free_amount, $order->partner_discount, 2),
+            'settleTotalAmount' => bcmul($order->total_amount, $order->partner_discount, 2),
+            'isCustomerPay' => $order->is_customer_pay,
             'items' => $this->getItems($order),
             'onlineDetail' => [
                 'waterNo' => $order->shopOrder->water_no,
@@ -113,6 +117,7 @@ class OrderService extends Service
                         'itemId' => $item->id,
                         'tradeCode' => $item->trade_code?:'',
                         'commonName' => $item->common_name,
+                        'batchNumber' => $item->batch_number?:'',
                         'approvalNumber' => $item->approval_number?:'',
                         'internalId' => $item->internal_id?:'',
                         "unitPrice" =>  $item->unit_price,
@@ -211,6 +216,11 @@ class OrderService extends Service
         }
     }
 
+    /**
+     * 统计订单数据
+     * @param ListStruct $struct
+     * @return \Phalcon\Mvc\Model\Row
+     */
     public function getStatistic(ListStruct $struct)
     {
         $builder = new Builder();
