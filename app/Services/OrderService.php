@@ -93,6 +93,11 @@ class OrderService extends Service
         return $return;
     }
 
+    /**
+     * 获取订单药品数据
+     * @param UgOrderRecords $order
+     * @return array
+     */
     public function getItems(UgOrderRecords $order)
     {
         $items = $order->items;
