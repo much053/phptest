@@ -9,7 +9,6 @@
 <property name="pkgfile" value="${phing.project.name}.${version}.tgz" />
 <property name="distfile" value="dist/${tarfile}" />
 <property name="tests.dir" value="tests" />
-####程序的目录（根据实际情况更改）
 <fileset id="ceshi.tar.gz" dir=".">
 <include name="tests/"/>
 <include name="assets/"/>
@@ -19,14 +18,12 @@
 <include name="protected/"/>
 <include name=".php"/>
 </fileset>
-####集成构建相关配置
 <target name="make_runtime">
 <mkdir dir="${project.basedir}/Runtime" />
 <mkdir dir="${project.basedir}/build/logs" />
 <mkdir dir="${project.basedir}/build/pdepend" />
 <mkdir dir="${project.basedir}/build/code-browser" />
 </target>
-####php代码规模分析工具配置
 <target name="pdepend" description="Calculate software metrics using PHP_Depend">
 <exec executable="pdepend">
 <arg value="--jdepend-xml=${project.basedir}/build/logs/jdepend.xml"/>
@@ -35,7 +32,6 @@
 <arg path="${project.basedir}/"/>
 </exec>
 </target>
-####php代码静态检查工具配置
 <target name="phpmd" description="Perform project mess detection using PHPMD">
 <phpmd>
 <fileset dir="${project.basedir}">
@@ -44,7 +40,6 @@
 </fileset>
 </phpmd>
 </target>
-####php代码分析工具配置
 <target name="phpcpd" description="Find duplicate code using PHPCPD">
 <phpcpd>
 <fileset dir="${project.basedir}">
@@ -53,7 +48,6 @@
 <formatter type="pmd" outfile="pmd-cpd.xml"/>
 </phpcpd>
 </target>
-####php单例测试配置
 <target name="test" description="Run PHPUnit tests">
 <phpunit haltonerror="true" haltonfailure="true" printsummary="true">
 <batchtest>
@@ -63,7 +57,6 @@
 </batchtest>
 </phpunit>
 </target>
-####构建参数配置
 <target name="check" description="Check variables" >
 <fail unless="version" message="Version not defined!" />
 <fail unless="buildnumber" message="buildnumber not defined!" />
@@ -71,7 +64,6 @@
 <delete dir="dist" failonerror="false" />
 <mkdir dir="dist" />
 </target>
-####构建参数配置
 <target name="tar" depends="check" description="Create tar file for release">
 <echo msg="Creating distribution tar for ${phing.project.name} ${version}"/>
 <delete file="${distfile}" failonerror="false"/>
