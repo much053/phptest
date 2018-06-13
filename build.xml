@@ -5,8 +5,8 @@
 <property name="version" value="1.1.0" />
 <property name="stability" value="stable" />
 <property name="releasenotes" value="" />
-<property name="tarfile" value="${phing.project.name}.1.1.tar.gz" />
-<property name="pkgfile" value="${phing.project.name}.1.tgz" />
+<property name="tarfile" value="${phing.project.name}.${buildnumber}.${buildid}.tar.gz" />
+<property name="pkgfile" value="${phing.project.name}.${version}.tgz" />
 <property name="distfile" value="dist/${tarfile}" />
 <property name="tests.dir" value="tests" />
 <fileset id="ceshi.tar.gz" dir=".">
